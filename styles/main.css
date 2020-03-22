@@ -190,33 +190,20 @@ button {
   padding: 0.15rem 0.5rem;
   color: #3b5e76;
   font-size: 0.7rem;
-  font-weight: 400;
-  background-color: #f3f3f3;
-  -webkit-box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
-          box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
-  border-top-left-radius: 0.3125rem;
-  border-top-right-radius: 0.3125rem;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  border-top: 0.15rem solid gainsboro;
-  border-right: 0.35rem solid gainsboro;
-  border-bottom: 0.6rem solid gainsboro;
-  border-left: 0.35rem solid gainsboro;
+  font-weight: 500;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-
-.key::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0.66667rem;
-  border-bottom-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
+  -webkit-box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
+          box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
+  background: -webkit-gradient(linear, left top, right top, from(#e9e9e9), color-stop(20%, #f3f3f3), color-stop(80%, #f3f3f3), to(#e9e9e9));
+  background: linear-gradient(90deg, #e9e9e9 0%, #f3f3f3 20%, #f3f3f3 80%, #e9e9e9);
+  border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
+  border-top: 0.15rem solid #dadada;
+  border-right: 0.35rem solid #dadada;
+  border-left: 0.35rem solid #dadada;
+  border-bottom: 0.6rem solid #d4d4d4;
 }
 
 .key:last-child {
@@ -224,21 +211,25 @@ button {
 }
 
 .key--primary {
-  background-color: #f28e7b;
   color: #3b5e76;
-  border-top: 0.15rem solid #f07e68;
-  border-right: 0.35rem solid #f07e68;
-  border-bottom: 0.6rem solid #f07e68;
-  border-left: 0.35rem solid #f07e68;
+  background: -webkit-gradient(linear, left top, right top, from(#f07e69), color-stop(20%, #f28e7c), color-stop(80%, #f28e7c), to(#f07e69));
+  background: linear-gradient(90deg, #f07e69 0%, #f28e7c 20%, #f28e7c 80%, #f07e69);
+  border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
+  border-top: 0.15rem solid #ed664e;
+  border-right: 0.35rem solid #ed664e;
+  border-left: 0.35rem solid #ed664e;
+  border-bottom: 0.6rem solid #e2654f;
 }
 
 .key--secondary {
-  background-color: #3b5e76;
-  color: #f28e7b;
-  border-top: 0.15rem solid #2f4b5e;
-  border-right: 0.35rem solid #2f4b5e;
-  border-bottom: 0.6rem solid #2f4b5e;
-  border-left: 0.35rem solid #2f4b5e;
+  color: #f28e7c;
+  background: -webkit-gradient(linear, left top, right top, from(#345368), color-stop(20%, #3b5e76), color-stop(80%, #3b5e76), to(#345368));
+  background: linear-gradient(90deg, #345368 0%, #3b5e76 20%, #3b5e76 80%, #345368);
+  border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
+  border-top: 0.15rem solid #2a4354;
+  border-right: 0.35rem solid #2a4354;
+  border-left: 0.35rem solid #2a4354;
+  border-bottom: 0.6rem solid #2c3c47;
 }
 
 .key--2 {
@@ -286,6 +277,11 @@ button {
   transition: -webkit-transform 0.1s;
   transition: transform 0.1s;
   transition: transform 0.1s, -webkit-transform 0.1s;
+}
+
+.key--convex {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f39685), color-stop(#f28e7c), to(#f07a65));
+  background: linear-gradient(180deg, #f39685, #f28e7c, #f07a65);
 }
 
 .options {

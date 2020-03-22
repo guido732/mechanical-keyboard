@@ -1,19 +1,8 @@
 // Variables
-$primary: #f28e7b;
-$primary-shadow: darken(
-	$color: $primary,
-	$amount: 4
-);
+$primary: #f28e7c;
 $secondary: #3b5e76;
-$secondary-shadow: darken(
-	$color: $secondary,
-	$amount: 7
-);
 $neutral: #f3f3f3;
-$neutral-shadow: darken(
-	$color: $neutral,
-	$amount: 9
-);
+
 $bg: linear-gradient(180deg, #688fa8 0%, #2c465a 100%);
 $bg-backlit-shadow-bright: red;
 $bg-backlit-bright: rgb(230, 0, 0);
@@ -25,19 +14,30 @@ $case-body-vertical: lighten($secondary, 5);
 $case-body-background: darken($secondary, 20);
 $case-shadow: 0 1.5rem 2rem 0rem #172635;
 $key-gap: 0.3125rem;
-$key-base: 4rem;
+$key-base-size: 4rem;
 $key-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
 $key-radius-top: 0.3125rem;
 $key-radius-bottom: 0.5rem;
 
 // Functions
 @function calcDim($baseMult: 1) {
-	$result: ($key-base * $baseMult) + ($key-gap * ($baseMult - 1));
+	$result: ($key-base-size * $baseMult) + ($key-gap * ($baseMult - 1));
 	@return $result;
 }
-@function calcShadow() {
-	$result: ($key-base / 6);
-	@return $result;
+@function keyTopGradient($baseColor: $primary, $rounded: false) {
+	@if $rounded == false {
+		@return (linear-gradient(90deg, darken($baseColor, 4) 0%, $baseColor 20%, $baseColor 80%, darken($baseColor, 4)));
+	} @else {
+		@return (linear-gradient(180deg, lighten($baseColor, 2), $baseColor, darken($baseColor, 5)));
+	}
+}
+@mixin keyStyles($baseColor: $neutral) {
+	background: keyTopGradient($baseColor);
+	border-radius: $key-radius-top $key-radius-top $key-radius-bottom $key-radius-bottom;
+	border-top: 0.15rem solid darken($baseColor, 10);
+	border-right: 0.35rem solid darken($baseColor, 10);
+	border-left: 0.35rem solid darken($baseColor, 10);
+	border-bottom: 0.6rem solid desaturate(darken($baseColor, 12), 10);
 }
 
 // Resets
@@ -164,8 +164,8 @@ button {
 }
 .key {
 	position: relative;
-	width: $key-base;
-	height: $key-base;
+	width: $key-base-size;
+	height: $key-base-size;
 	display: flex;
 	flex-flow: column;
 	justify-content: space-between;
@@ -173,48 +173,20 @@ button {
 	padding: 0.15rem 0.5rem;
 	color: $secondary;
 	font-size: 0.7rem;
-	font-weight: 400;
-	background-color: $neutral;
-	box-shadow: $key-shadow;
-	border-top-left-radius: $key-radius-top;
-	border-top-right-radius: $key-radius-top;
-	border-bottom-left-radius: $key-radius-bottom;
-	border-bottom-right-radius: $key-radius-bottom;
-	border-top: 0.15rem solid $neutral-shadow;
-	border-right: 0.35rem solid $neutral-shadow;
-	border-bottom: 0.6rem solid $neutral-shadow;
-	border-left: 0.35rem solid $neutral-shadow;
+	font-weight: 500;
 	user-select: none;
-	// transition: transform 0.2s ease-out;
-
-	&::after {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: calcShadow();
-		border-bottom-right-radius: $key-radius-bottom;
-		border-bottom-left-radius: $key-radius-bottom;
-	}
+	box-shadow: $key-shadow;
+	@include keyStyles();
 	&:last-child {
 		margin-right: 0;
 	}
 	&--primary {
-		background-color: $primary;
 		color: $secondary;
-		border-top: 0.15rem solid $primary-shadow;
-		border-right: 0.35rem solid $primary-shadow;
-		border-bottom: 0.6rem solid $primary-shadow;
-		border-left: 0.35rem solid $primary-shadow;
+		@include keyStyles($primary);
 	}
 	&--secondary {
-		background-color: $secondary;
 		color: $primary;
-		border-top: 0.15rem solid $secondary-shadow;
-		border-right: 0.35rem solid $secondary-shadow;
-		border-bottom: 0.6rem solid $secondary-shadow;
-		border-left: 0.35rem solid $secondary-shadow;
+		@include keyStyles($secondary);
 	}
 	&--2 {
 		width: calcDim(1.25);
@@ -241,13 +213,16 @@ button {
 			margin-bottom: 0;
 		}
 		&--5 {
-			width: $key-base;
+			width: $key-base-size;
 			height: calcDim((2));
 		}
 	}
 	&--pressed {
 		transform: translateY(0.2rem);
 		transition: transform 0.1s;
+	}
+	&--convex {
+		background: keyTopGradient($primary, true);
 	}
 }
 .options {
