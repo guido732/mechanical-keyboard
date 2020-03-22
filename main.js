@@ -33,3 +33,16 @@ const getRandomAudio = () => {
 	const number = Math.floor(Math.random() * 5) + 1;
 	return number;
 };
+
+const $accordeonBtn = document.querySelector(".options__button");
+const $panel = document.querySelector(".options__panel");
+$accordeonBtn.addEventListener("click", toggleVisibility);
+
+function toggleVisibility() {
+	this.classList.toggle("active");
+	if ($panel.style.display === "flex") {
+		$panel.style.display = "none";
+	} else {
+		$panel.style.display = "flex";
+	}
+}

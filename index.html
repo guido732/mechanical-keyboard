@@ -139,9 +139,19 @@
 				</div>
 			</div>
 		</div>
-		<div class="">
-			<input type="checkbox" name="RGB" id="rgb" />
-			<label for="RGB">RGB on/off</label>
+		<div class="options">
+			<button class="options__button">Show Options</button>
+			<div class="options__panel">
+				<div class="options__panel__rgb">
+					<input type="checkbox" name="RGB" id="RGB" value="RGB" />
+					<label for="RGB">RGB on/off</label>
+				</div>
+				<select class="options__panel__theme" name="pallete" id="pallete">
+					<option value="coral">Coral Sea</option>
+					<option value="sky">Sky City</option>
+					<option value="jungle">Jungle Mystery</option>
+				</select>
+			</div>
 		</div>
 		<audio data-audio="1" src="assets/mk1b.mp3"></audio>
 		<audio data-audio="2" src="assets/mk2b.mp3"></audio>
