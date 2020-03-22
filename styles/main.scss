@@ -245,6 +245,7 @@ button {
 }
 .options {
 	margin-top: 2rem;
+	width: 100%;
 	&__button {
 		width: 100%;
 		color: white;
@@ -257,19 +258,26 @@ button {
 		transition: height 0.4s;
 	}
 	&__panel {
-		color: white;
-		font-size: 1.5rem;
-		padding: 0 18px;
-		display: flex;
-		max-height: 0;
 		overflow: hidden;
+		width: 100%;
+		max-height: 0;
+		font-size: 1.5rem;
+		color: white;
+		background-color: $case-body-vertical;
 		transition: max-height 0.2s ease-out;
-		&__rgb {
-			margin-right: 2rem;
-		}
-		&__theme {
-			padding: 0 2rem 0 0.5rem;
-			width: 10rem;
+		&__wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 2rem 0;
+			&__rgb {
+				margin-right: 2rem;
+			}
+			&__theme-selector {
+				padding: 0.5rem 1rem;
+				width: 12rem;
+				border: none;
+			}
 		}
 	}
 }
