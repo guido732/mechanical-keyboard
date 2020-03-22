@@ -1,18 +1,9 @@
-// document.querySelectorAll(".key").forEach(key => {
-// 	key.addEventListener("mousedown", togglePress);
-// 	key.addEventListener("mouseup", toggleRelease);
-// });
-
-// function togglePress(e) {
-// 	e.target.closest(".key").classList.add("key--pressed");
-// }
-// function toggleRelease(e) {
-// 	e.target.closest(".key").classList.remove("key--pressed");
-// }
-
 document.addEventListener("keydown", function(event) {
 	const key = event.code;
-	console.log(key);
+	console.log(key, getRandomAudio());
+	const audio = document.querySelector(`[data-audio="${getRandomAudio()}"]`);
+	audio.currentTime = 0;
+	audio.play();
 	document.querySelector(`[data-key='${key}']`).classList.add("key--pressed");
 });
 document.addEventListener("keyup", function(event) {
@@ -41,3 +32,8 @@ document.addEventListener("click", evt => {
 function clearPressed() {
 	document.querySelectorAll(".key").forEach(key => key.classList.remove("key--pressed"));
 }
+
+const getRandomAudio = () => {
+	const number = Math.floor(Math.random() * 5) + 1;
+	return number;
+};
