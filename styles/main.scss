@@ -2,7 +2,15 @@
 $bg: linear-gradient(180deg, #688fa8 0%, #2c465a 100%);
 $case-body: #406173;
 $case-shadow: 0 2rem 2rem 0rem #172635;
-$key-gap: 5px;
+$key-gap: 0.3125rem;
+$key-base: 3rem;
+$key-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
+
+// Functions
+@function calcWidth($baseMult: 1) {
+	$result: ($key-base * $baseMult) + ($key-gap * ($baseMult - 1));
+	@return $result;
+}
 
 // Resets
 * {
@@ -27,8 +35,6 @@ body {
 }
 
 .keyboard {
-	// width: 75rem;
-	// height: calc((6 * 100 / 19) * 75rem / 100);
 	padding: 1rem;
 	background-color: $case-body;
 	box-shadow: $case-shadow;
@@ -40,12 +46,10 @@ body {
 		grid-gap: $key-gap;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(6, 1fr);
-
 		&__row {
-			display: grid;
-			gap: $key-gap;
-			grid-template-rows: 1fr;
+			display: flex;
 			width: min-content;
+
 			&--lg {
 				grid-template-columns: repeat(15, 1fr);
 			}
@@ -58,9 +62,33 @@ body {
 
 .key {
 	border-radius: 5px;
-	width: 3rem;
-	height: 3rem;
-	background-color: white;
+	width: $key-base;
+	height: $key-base;
+	background-color: #f5f6f6;
+	color: #3d5f76;
 	padding: 0.5rem;
 	font-size: 0.8rem;
+	margin-right: $key-gap;
+	box-shadow: $key-shadow;
+	&:last-child {
+		margin-right: 0;
+	}
+	&--2 {
+		width: calcWidth(1.25);
+	}
+	&--3 {
+		width: calcWidth(1.5);
+	}
+	&--4 {
+		width: calcWidth(1.75);
+	}
+	&--5 {
+		width: calcWidth(2);
+	}
+	&--6 {
+		width: calcWidth(2.25);
+	}
+	&--7 {
+		width: calcWidth(6.25);
+	}
 }

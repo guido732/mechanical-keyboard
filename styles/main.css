@@ -40,7 +40,7 @@ body {
   display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
-  grid-gap: 5px;
+  grid-gap: 0.3125rem;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   -ms-grid-rows: (1fr)[6];
@@ -48,11 +48,9 @@ body {
 }
 
 .keyboard__section__row {
-  display: -ms-grid;
-  display: grid;
-  gap: 5px;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -72,7 +70,39 @@ body {
   border-radius: 5px;
   width: 3rem;
   height: 3rem;
-  background-color: white;
+  background-color: #f5f6f6;
+  color: #3d5f76;
   padding: 0.5rem;
   font-size: 0.8rem;
+  margin-right: 0.3125rem;
+  -webkit-box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
+          box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
+}
+
+.key:last-child {
+  margin-right: 0;
+}
+
+.key--2 {
+  width: 3.82812rem;
+}
+
+.key--3 {
+  width: 4.65625rem;
+}
+
+.key--4 {
+  width: 5.48438rem;
+}
+
+.key--5 {
+  width: 6.3125rem;
+}
+
+.key--6 {
+  width: 7.14062rem;
+}
+
+.key--7 {
+  width: 20.39062rem;
 }
