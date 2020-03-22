@@ -26,7 +26,7 @@ body {
 }
 
 .keyboard {
-  padding: 1rem;
+  padding: 0.75rem;
   background-color: #406173;
   -webkit-box-shadow: 0 2rem 2rem 0rem #172635;
           box-shadow: 0 2rem 2rem 0rem #172635;
@@ -37,14 +37,25 @@ body {
 }
 
 .keyboard__section {
-  display: -ms-grid;
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 0.3125rem;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: (1fr)[6];
-      grid-template-rows: repeat(6, 1fr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 0.3125rem;
+}
+
+.keyboard__section:last-child {
+  margin-right: 0;
+}
+
+.keyboard__section--vertical {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .keyboard__section__row {
@@ -54,22 +65,24 @@ body {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
+  margin-bottom: 0.3125rem;
 }
 
-.keyboard__section__row--lg {
-  -ms-grid-columns: (1fr)[15];
-      grid-template-columns: repeat(15, 1fr);
+.keyboard__section__row:last-child {
+  margin-bottom: 0;
 }
 
-.keyboard__section__row--sm {
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+.keyboard__section__row--vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .key {
-  border-radius: 5px;
-  width: 3rem;
-  height: 3rem;
+  border-radius: 0.3125rem;
+  width: 4rem;
+  height: 4rem;
   background-color: #f5f6f6;
   color: #3d5f76;
   padding: 0.5rem;
@@ -84,25 +97,38 @@ body {
 }
 
 .key--2 {
-  width: 3.82812rem;
+  width: 5.07812rem;
 }
 
 .key--3 {
-  width: 4.65625rem;
+  width: 6.15625rem;
 }
 
 .key--4 {
-  width: 5.48438rem;
+  width: 7.23438rem;
 }
 
 .key--5 {
-  width: 6.3125rem;
+  width: 8.3125rem;
 }
 
 .key--6 {
-  width: 7.14062rem;
+  width: 9.39062rem;
 }
 
 .key--7 {
-  width: 20.39062rem;
+  width: 26.64062rem;
+}
+
+.key--vert {
+  margin-bottom: 0.3125rem;
+}
+
+.key--vert:last-child {
+  margin-bottom: 0;
+}
+
+.key--vert--5 {
+  width: 4rem;
+  height: 8.3125rem;
 }

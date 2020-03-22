@@ -3,11 +3,11 @@ $bg: linear-gradient(180deg, #688fa8 0%, #2c465a 100%);
 $case-body: #406173;
 $case-shadow: 0 2rem 2rem 0rem #172635;
 $key-gap: 0.3125rem;
-$key-base: 3rem;
+$key-base: 4rem;
 $key-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
 
 // Functions
-@function calcWidth($baseMult: 1) {
+@function calcDim($baseMult: 1) {
 	$result: ($key-base * $baseMult) + ($key-gap * ($baseMult - 1));
 	@return $result;
 }
@@ -35,33 +35,37 @@ body {
 }
 
 .keyboard {
-	padding: 1rem;
+	padding: 0.75rem;
 	background-color: $case-body;
 	box-shadow: $case-shadow;
 	border-radius: 0.5rem;
 	display: flex;
 	&__section {
-		display: grid;
-		grid-auto-flow: column;
-		grid-gap: $key-gap;
-		grid-template-columns: 1fr;
-		grid-template-rows: repeat(6, 1fr);
+		display: flex;
+		flex-direction: column;
+		margin-right: $key-gap;
+		&:last-child {
+			margin-right: 0;
+		}
+		&--vertical {
+			flex-direction: row;
+		}
 		&__row {
 			display: flex;
 			width: min-content;
-
-			&--lg {
-				grid-template-columns: repeat(15, 1fr);
+			margin-bottom: $key-gap;
+			&:last-child {
+				margin-bottom: 0;
 			}
-			&--sm {
-				grid-template-columns: repeat(4, 1fr);
+			&--vertical {
+				flex-direction: column;
 			}
 		}
 	}
 }
 
 .key {
-	border-radius: 5px;
+	border-radius: 0.3125rem;
 	width: $key-base;
 	height: $key-base;
 	background-color: #f5f6f6;
@@ -74,21 +78,31 @@ body {
 		margin-right: 0;
 	}
 	&--2 {
-		width: calcWidth(1.25);
+		width: calcDim(1.25);
 	}
 	&--3 {
-		width: calcWidth(1.5);
+		width: calcDim(1.5);
 	}
 	&--4 {
-		width: calcWidth(1.75);
+		width: calcDim(1.75);
 	}
 	&--5 {
-		width: calcWidth(2);
+		width: calcDim(2);
 	}
 	&--6 {
-		width: calcWidth(2.25);
+		width: calcDim(2.25);
 	}
 	&--7 {
-		width: calcWidth(6.25);
+		width: calcDim(6.25);
+	}
+	&--vert {
+		margin-bottom: $key-gap;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&--5 {
+			width: $key-base;
+			height: calcDim((2));
+		}
 	}
 }
