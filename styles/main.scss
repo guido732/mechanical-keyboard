@@ -16,6 +16,8 @@ $neutral-shadow: darken(
 );
 $bg: linear-gradient(180deg, #688fa8 0%, #2c465a 100%);
 $case-body: darken($secondary, 5);
+$case-body-horizontal: darken($secondary, 5);
+$case-body-vertical: lighten($secondary, 5);
 $case-body-background: darken($secondary, 20);
 $case-shadow: 0 1.5rem 2rem 0rem #172635;
 $key-gap: 0.3125rem;
@@ -41,36 +43,37 @@ $key-radius-bottom: 0.5rem;
 	box-sizing: border-box;
 }
 
-// Element Base Styling
-body {
-	background: $bg;
-	font-family: "Baloo 2", cursive;
-}
 h1 {
 	color: white;
 	opacity: 0.3;
 	font-size: 8rem;
 	margin-top: -3rem;
 	margin-bottom: -2rem;
-	// font-style: oblique;
 }
 
 // Components
 .container {
+	background: $bg;
+	font-family: "Baloo 2", cursive;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	width: 100vw;
 	height: 100vh;
+	overflow: visible;
 }
 
 .keyboard {
-	padding: 0.75rem;
 	background-color: $case-body;
-	border-radius: 1rem;
 	display: flex;
 	position: relative;
+	border-radius: 0.5rem;
+	border-top: 0.75rem solid $case-body-horizontal;
+	border-right: 0.75rem solid $case-body-vertical;
+	border-bottom: 0.75rem solid $case-body-horizontal;
+	border-left: 0.75rem solid $case-body-vertical;
+
 	&::before {
 		content: "";
 		position: absolute;
@@ -116,6 +119,36 @@ h1 {
 					margin-right: 0;
 				}
 			}
+		}
+	}
+	&__corner {
+		width: 0.25rem;
+		height: 1rem;
+		background: $case-body-background;
+		position: absolute;
+		&--tl {
+			top: 2px;
+			left: 0px;
+			transform: rotate(-225deg);
+			transform-origin: 50% 0%;
+		}
+		&--tr {
+			top: 2px;
+			right: 0px;
+			transform: rotate(-135deg);
+			transform-origin: 50% 0%;
+		}
+		&--bl {
+			bottom: 2px;
+			left: 0px;
+			transform: rotate(-135deg);
+			transform-origin: 50% 100%;
+		}
+		&--br {
+			bottom: 2px;
+			right: 0px;
+			transform: rotate(135deg);
+			transform-origin: 50% 100%;
 		}
 	}
 }

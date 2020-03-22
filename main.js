@@ -1,6 +1,5 @@
 document.addEventListener("keydown", function(event) {
 	const key = event.code;
-	console.log(key, getRandomAudio());
 	const audio = document.querySelector(`[data-audio="${getRandomAudio()}"]`);
 	audio.currentTime = 0;
 	audio.play();
@@ -8,11 +7,8 @@ document.addEventListener("keydown", function(event) {
 });
 document.addEventListener("keyup", function(event) {
 	const key = event.code;
-	// console.log(key);
 	document.querySelector(`[data-key='${key}']`).classList.remove("key--pressed");
-	if (key === "Escape") {
-		clearPressed();
-	}
+	key === "Escape" && clearPressed();
 });
 
 document.addEventListener("click", evt => {

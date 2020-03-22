@@ -5,12 +5,6 @@
           box-sizing: border-box;
 }
 
-body {
-  background: -webkit-gradient(linear, left top, left bottom, from(#688fa8), to(#2c465a));
-  background: linear-gradient(180deg, #688fa8 0%, #2c465a 100%);
-  font-family: "Baloo 2", cursive;
-}
-
 h1 {
   color: white;
   opacity: 0.3;
@@ -20,6 +14,9 @@ h1 {
 }
 
 .container {
+  background: -webkit-gradient(linear, left top, left bottom, from(#688fa8), to(#2c465a));
+  background: linear-gradient(180deg, #688fa8 0%, #2c465a 100%);
+  font-family: "Baloo 2", cursive;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,16 +32,20 @@ h1 {
           justify-content: center;
   width: 100vw;
   height: 100vh;
+  overflow: visible;
 }
 
 .keyboard {
-  padding: 0.75rem;
   background-color: #335065;
-  border-radius: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  border-radius: 0.5rem;
+  border-top: 0.75rem solid #335065;
+  border-right: 0.75rem solid #446c87;
+  border-bottom: 0.75rem solid #335065;
+  border-left: 0.75rem solid #446c87;
 }
 
 .keyboard::before {
@@ -117,6 +118,49 @@ h1 {
 
 .keyboard__section__row--vertical:last-child {
   margin-right: 0;
+}
+
+.keyboard__corner {
+  width: 0.25rem;
+  height: 1rem;
+  background: #192832;
+  position: absolute;
+}
+
+.keyboard__corner--tl {
+  top: 2px;
+  left: 0px;
+  -webkit-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+}
+
+.keyboard__corner--tr {
+  top: 2px;
+  right: 0px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  -webkit-transform-origin: 50% 0%;
+          transform-origin: 50% 0%;
+}
+
+.keyboard__corner--bl {
+  bottom: 2px;
+  left: 0px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+
+.keyboard__corner--br {
+  bottom: 2px;
+  right: 0px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
 }
 
 .key {
