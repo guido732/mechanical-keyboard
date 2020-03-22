@@ -1,14 +1,35 @@
 // Variables
+$primary: #f28e7b;
+$primary-shadow: darken(
+	$color: $primary,
+	$amount: 4
+);
+$secondary: #42657a;
+$secondary-shadow: darken(
+	$color: $secondary,
+	$amount: 4
+);
+$neutral: #f5f6f6;
+$neutral-shadow: darken(
+	$color: $neutral,
+	$amount: 4
+);
 $bg: linear-gradient(180deg, #688fa8 0%, #2c465a 100%);
-$case-body: #406173;
+$case-body: darken($secondary, 5);
 $case-shadow: 0 2rem 2rem 0rem #172635;
 $key-gap: 0.3125rem;
 $key-base: 4rem;
 $key-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
+$key-radius-top: 0.3125rem;
+$key-radius-bottom: 0.5rem;
 
 // Functions
 @function calcDim($baseMult: 1) {
 	$result: ($key-base * $baseMult) + ($key-gap * ($baseMult - 1));
+	@return $result;
+}
+@function calcShadow() {
+	$result: ($key-base / 6);
 	@return $result;
 }
 
@@ -65,17 +86,52 @@ body {
 }
 
 .key {
-	border-radius: 0.3125rem;
+	border-top-left-radius: $key-radius-top;
+	border-top-right-radius: $key-radius-top;
+	border-bottom-left-radius: $key-radius-bottom;
+	border-bottom-right-radius: $key-radius-bottom;
+	border-top: 0.15rem solid $neutral-shadow;
+	border-right: 0.35rem solid $neutral-shadow;
+	border-bottom: 0.5rem solid $neutral-shadow;
+	border-left: 0.35rem solid $neutral-shadow;
 	width: $key-base;
 	height: $key-base;
-	background-color: #f5f6f6;
-	color: #3d5f76;
+	background-color: $neutral;
+	color: $secondary;
 	padding: 0.5rem;
 	font-size: 0.8rem;
+	font-weight: 500;
 	margin-right: $key-gap;
 	box-shadow: $key-shadow;
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: calcShadow();
+		border-bottom-right-radius: $key-radius-bottom;
+		border-bottom-left-radius: $key-radius-bottom;
+	}
 	&:last-child {
 		margin-right: 0;
+	}
+	&--primary {
+		background-color: $primary;
+		color: $secondary;
+		border-top: 0.15rem solid $primary-shadow;
+		border-right: 0.35rem solid $primary-shadow;
+		border-bottom: 0.5rem solid $primary-shadow;
+		border-left: 0.35rem solid $primary-shadow;
+	}
+	&--secondary {
+		background-color: $secondary;
+		color: $primary;
+		border-top: 0.15rem solid $secondary-shadow;
+		border-right: 0.35rem solid $secondary-shadow;
+		border-bottom: 0.5rem solid $secondary-shadow;
+		border-left: 0.35rem solid $secondary-shadow;
 	}
 	&--2 {
 		width: calcDim(1.25);

@@ -27,7 +27,7 @@ body {
 
 .keyboard {
   padding: 0.75rem;
-  background-color: #406173;
+  background-color: #395769;
   -webkit-box-shadow: 0 2rem 2rem 0rem #172635;
           box-shadow: 0 2rem 2rem 0rem #172635;
   border-radius: 0.5rem;
@@ -80,20 +80,58 @@ body {
 }
 
 .key {
-  border-radius: 0.3125rem;
+  border-top-left-radius: 0.3125rem;
+  border-top-right-radius: 0.3125rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-top: 0.15rem solid #eaecec;
+  border-right: 0.35rem solid #eaecec;
+  border-bottom: 0.5rem solid #eaecec;
+  border-left: 0.35rem solid #eaecec;
   width: 4rem;
   height: 4rem;
   background-color: #f5f6f6;
-  color: #3d5f76;
+  color: #42657a;
   padding: 0.5rem;
   font-size: 0.8rem;
+  font-weight: 500;
   margin-right: 0.3125rem;
   -webkit-box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
           box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
+  position: relative;
+}
+
+.key::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.66667rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }
 
 .key:last-child {
   margin-right: 0;
+}
+
+.key--primary {
+  background-color: #f28e7b;
+  color: #42657a;
+  border-top: 0.15rem solid #f07e68;
+  border-right: 0.35rem solid #f07e68;
+  border-bottom: 0.5rem solid #f07e68;
+  border-left: 0.35rem solid #f07e68;
+}
+
+.key--secondary {
+  background-color: #42657a;
+  color: #f28e7b;
+  border-top: 0.15rem solid #3b5a6d;
+  border-right: 0.35rem solid #3b5a6d;
+  border-bottom: 0.5rem solid #3b5a6d;
+  border-left: 0.35rem solid #3b5a6d;
 }
 
 .key--2 {
