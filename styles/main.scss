@@ -1,0 +1,66 @@
+// Variables
+$bg: linear-gradient(180deg, #688fa8 0%, #2c465a 100%);
+$case-body: #406173;
+$case-shadow: 0 2rem 2rem 0rem #172635;
+$key-gap: 5px;
+
+// Resets
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+// Element Base Styling
+body {
+	background: $bg;
+	font-family: "Roboto", sans-serif;
+}
+
+// Components
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.keyboard {
+	// width: 75rem;
+	// height: calc((6 * 100 / 19) * 75rem / 100);
+	padding: 1rem;
+	background-color: $case-body;
+	box-shadow: $case-shadow;
+	border-radius: 0.5rem;
+	display: flex;
+	&__section {
+		display: grid;
+		grid-auto-flow: column;
+		grid-gap: $key-gap;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(6, 1fr);
+
+		&__row {
+			display: grid;
+			gap: $key-gap;
+			grid-template-rows: 1fr;
+			width: min-content;
+			&--lg {
+				grid-template-columns: repeat(15, 1fr);
+			}
+			&--sm {
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
+	}
+}
+
+.key {
+	border-radius: 5px;
+	width: 3rem;
+	height: 3rem;
+	background-color: white;
+	padding: 0.5rem;
+	font-size: 0.8rem;
+}
