@@ -304,7 +304,10 @@ button {
   color: white;
   font-size: 1.5rem;
   padding: 0 18px;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 0;
   overflow: hidden;
   -webkit-transition: max-height 0.2s ease-out;
   transition: max-height 0.2s ease-out;

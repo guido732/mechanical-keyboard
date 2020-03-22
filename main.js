@@ -40,9 +40,11 @@ $accordeonBtn.addEventListener("click", toggleVisibility);
 
 function toggleVisibility() {
 	this.classList.toggle("active");
-	if ($panel.style.display === "flex") {
-		$panel.style.display = "none";
+	if ($panel.style.maxHeight) {
+		$panel.style.maxHeight = null;
+		$accordeonBtn.textContent = "Show options";
 	} else {
-		$panel.style.display = "flex";
+		$panel.style.maxHeight = $panel.scrollHeight + "px";
+		$accordeonBtn.textContent = "Hide options";
 	}
 }
