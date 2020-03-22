@@ -123,6 +123,9 @@ button {
 				}
 			}
 		}
+		&--rgb-active {
+			animation: rgb 1.5s infinite linear;
+		}
 	}
 	&__corner {
 		width: 0.25rem;
@@ -301,4 +304,21 @@ button {
 .condensed {
 	letter-spacing: -1px;
 	font-weight: 400;
+}
+
+// Animations
+
+@keyframes rgb {
+	0% {
+		background-color: red;
+		box-shadow: 0 0 10px 0 red;
+	}
+	50% {
+		background-color: blue;
+		box-shadow: 0 0 10px 0 blue;
+	}
+	100% {
+		background-color: red;
+		box-shadow: 0 0 10px 0 red;
+	}
 }

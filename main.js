@@ -1,3 +1,4 @@
+// Keypress animation
 document.addEventListener("keydown", function(event) {
 	const key = event.code;
 	const audio = document.querySelector(`[data-audio="${getRandomAudio()}"]`);
@@ -8,9 +9,12 @@ document.addEventListener("keydown", function(event) {
 document.addEventListener("keyup", function(event) {
 	const key = event.code;
 	document.querySelector(`[data-key='${key}']`).classList.remove("key--pressed");
-	key === "Escape" && clearPressed();
+	if (key === "Escape") {
+		clearPressed();
+		closePanel();
+	}
 });
-
+// Clear all keys on click outside of keyboard
 document.addEventListener("click", evt => {
 	const keyboard = document.querySelector(".keyboard");
 	let targetElement = evt.target; // clicked element
@@ -24,21 +28,23 @@ document.addEventListener("click", evt => {
 	} while (targetElement);
 	clearPressed();
 });
+// Expansion panel
+const $accordeonBtn = document.querySelector(".options__button");
+const $panel = document.querySelector(".options__panel");
+$accordeonBtn.addEventListener("click", togglePanelVisibility);
+// Toggle RGB
+const $rgb = document.querySelector("#RGB");
+$rgb.checked = false;
+$rgb.addEventListener("change", toggleRGB);
 
 function clearPressed() {
 	document.querySelectorAll(".key").forEach(key => key.classList.remove("key--pressed"));
 }
-
-const getRandomAudio = () => {
+function getRandomAudio() {
 	const number = Math.floor(Math.random() * 5) + 1;
 	return number;
-};
-
-const $accordeonBtn = document.querySelector(".options__button");
-const $panel = document.querySelector(".options__panel");
-$accordeonBtn.addEventListener("click", toggleVisibility);
-
-function toggleVisibility() {
+}
+function togglePanelVisibility() {
 	this.classList.toggle("active");
 	if ($panel.style.maxHeight) {
 		$panel.style.maxHeight = null;
@@ -47,4 +53,15 @@ function toggleVisibility() {
 		$panel.style.maxHeight = $panel.scrollHeight + "px";
 		$accordeonBtn.textContent = "Hide options";
 	}
+}
+function closePanel() {
+	$rgb.classList.remove("active");
+	$panel.style.maxHeight = null;
+	$accordeonBtn.textContent = "Show options";
+}
+function toggleRGB() {
+	const $keyboard = document.querySelectorAll(".keyboard__section");
+	this.checked
+		? $keyboard.forEach(section => section.classList.add("keyboard__section--rgb-active"))
+		: $keyboard.forEach(section => section.classList.remove("keyboard__section--rgb-active"));
 }

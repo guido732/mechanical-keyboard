@@ -124,6 +124,11 @@ button {
   margin-right: 0;
 }
 
+.keyboard__section--rgb-active {
+  -webkit-animation: rgb 1.5s infinite linear;
+          animation: rgb 1.5s infinite linear;
+}
+
 .keyboard__corner {
   width: 0.25rem;
   height: 1rem;
@@ -363,4 +368,40 @@ button {
 .condensed {
   letter-spacing: -1px;
   font-weight: 400;
+}
+
+@-webkit-keyframes rgb {
+  0% {
+    background-color: red;
+    -webkit-box-shadow: 0 0 10px 0 red;
+            box-shadow: 0 0 10px 0 red;
+  }
+  50% {
+    background-color: blue;
+    -webkit-box-shadow: 0 0 10px 0 blue;
+            box-shadow: 0 0 10px 0 blue;
+  }
+  100% {
+    background-color: red;
+    -webkit-box-shadow: 0 0 10px 0 red;
+            box-shadow: 0 0 10px 0 red;
+  }
+}
+
+@keyframes rgb {
+  0% {
+    background-color: red;
+    -webkit-box-shadow: 0 0 10px 0 red;
+            box-shadow: 0 0 10px 0 red;
+  }
+  50% {
+    background-color: blue;
+    -webkit-box-shadow: 0 0 10px 0 blue;
+            box-shadow: 0 0 10px 0 blue;
+  }
+  100% {
+    background-color: red;
+    -webkit-box-shadow: 0 0 10px 0 red;
+            box-shadow: 0 0 10px 0 red;
+  }
 }
