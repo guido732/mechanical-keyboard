@@ -32,10 +32,10 @@ document.addEventListener("click", evt => {
 const $accordeonBtn = document.querySelector(".options__button");
 const $panel = document.querySelector(".options__panel");
 $accordeonBtn.addEventListener("click", togglePanelVisibility);
-// Toggle RGB
-const $rgb = document.querySelector("#RGB");
-$rgb.checked = false;
-$rgb.addEventListener("change", toggleRGB);
+// Toggle backlight
+const $backlight = document.querySelector("#backlight");
+$backlight.checked = false;
+$backlight.addEventListener("change", toggleBacklight);
 
 function clearPressed() {
 	document.querySelectorAll(".key").forEach(key => key.classList.remove("key--pressed"));
@@ -55,13 +55,13 @@ function togglePanelVisibility() {
 	}
 }
 function closePanel() {
-	$rgb.classList.remove("active");
+	$backlight.classList.remove("active");
 	$panel.style.maxHeight = null;
 	$accordeonBtn.textContent = "Show options";
 }
-function toggleRGB() {
+function toggleBacklight() {
 	const $keyboard = document.querySelectorAll(".keyboard__section");
 	this.checked
-		? $keyboard.forEach(section => section.classList.add("keyboard__section--rgb-active"))
-		: $keyboard.forEach(section => section.classList.remove("keyboard__section--rgb-active"));
+		? $keyboard.forEach(section => section.classList.add("keyboard__section--backlight-active"))
+		: $keyboard.forEach(section => section.classList.remove("keyboard__section--backlight-active"));
 }

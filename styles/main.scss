@@ -15,6 +15,10 @@ $neutral-shadow: darken(
 	$amount: 9
 );
 $bg: linear-gradient(180deg, #688fa8 0%, #2c465a 100%);
+$bg-backlit-shadow-bright: red;
+$bg-backlit-bright: rgb(230, 0, 0);
+$bg-backlit-dim: rgb(122, 0, 0);
+$bg-options-panel: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.1) 100%);
 $case-body: darken($secondary, 5);
 $case-body-horizontal: darken($secondary, 5);
 $case-body-vertical: lighten($secondary, 5);
@@ -123,8 +127,8 @@ button {
 				}
 			}
 		}
-		&--rgb-active {
-			animation: rgb 1.5s infinite linear;
+		&--backlight-active {
+			animation: backlight 3s ease infinite;
 		}
 	}
 	&__corner {
@@ -255,7 +259,7 @@ button {
 		background-color: transparent;
 		border: none;
 		outline: none;
-		font-size: 3rem;
+		font-size: 2rem;
 		text-align: center;
 		cursor: pointer;
 		transition: height 0.4s;
@@ -266,14 +270,15 @@ button {
 		max-height: 0;
 		font-size: 1.5rem;
 		color: white;
-		background-color: $case-body-vertical;
+		background: $bg-options-panel;
+		box-shadow: 0 15px 15px 0 rgba(104, 143, 168, 0.05);
 		transition: max-height 0.2s ease-out;
 		&__wrapper {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: 2rem 0;
-			&__rgb {
+			padding: 3rem 0;
+			&__backlight {
 				margin-right: 2rem;
 			}
 			&__theme-selector {
@@ -307,18 +312,17 @@ button {
 }
 
 // Animations
-
-@keyframes rgb {
+@keyframes backlight {
 	0% {
-		background-color: red;
-		box-shadow: 0 0 10px 0 red;
+		background: $bg-backlit-dim;
+		box-shadow: 0 0 7px 0 $bg-backlit-dim;
 	}
 	50% {
-		background-color: blue;
-		box-shadow: 0 0 10px 0 blue;
+		background: $bg-backlit-bright;
+		box-shadow: 0 0 15px 2px $bg-backlit-shadow-bright;
 	}
 	100% {
-		background-color: red;
-		box-shadow: 0 0 10px 0 red;
+		background: $bg-backlit-dim;
+		box-shadow: 0 0 5px 0 $bg-backlit-dim;
 	}
 }

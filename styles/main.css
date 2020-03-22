@@ -124,9 +124,9 @@ button {
   margin-right: 0;
 }
 
-.keyboard__section--rgb-active {
-  -webkit-animation: rgb 1.5s infinite linear;
-          animation: rgb 1.5s infinite linear;
+.keyboard__section--backlight-active {
+  -webkit-animation: backlight 3s ease infinite;
+          animation: backlight 3s ease infinite;
 }
 
 .keyboard__corner {
@@ -299,7 +299,7 @@ button {
   background-color: transparent;
   border: none;
   outline: none;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
   cursor: pointer;
   -webkit-transition: height 0.4s;
@@ -312,7 +312,10 @@ button {
   max-height: 0;
   font-size: 1.5rem;
   color: white;
-  background-color: #446c87;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.1)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.1) 100%);
+  -webkit-box-shadow: 0 15px 15px 0 rgba(104, 143, 168, 0.05);
+          box-shadow: 0 15px 15px 0 rgba(104, 143, 168, 0.05);
   -webkit-transition: max-height 0.2s ease-out;
   transition: max-height 0.2s ease-out;
 }
@@ -327,10 +330,10 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 
-.options__panel__wrapper__rgb {
+.options__panel__wrapper__backlight {
   margin-right: 2rem;
 }
 
@@ -370,38 +373,38 @@ button {
   font-weight: 400;
 }
 
-@-webkit-keyframes rgb {
+@-webkit-keyframes backlight {
   0% {
-    background-color: red;
-    -webkit-box-shadow: 0 0 10px 0 red;
-            box-shadow: 0 0 10px 0 red;
+    background: #7a0000;
+    -webkit-box-shadow: 0 0 7px 0 #7a0000;
+            box-shadow: 0 0 7px 0 #7a0000;
   }
   50% {
-    background-color: blue;
-    -webkit-box-shadow: 0 0 10px 0 blue;
-            box-shadow: 0 0 10px 0 blue;
+    background: #e60000;
+    -webkit-box-shadow: 0 0 15px 2px red;
+            box-shadow: 0 0 15px 2px red;
   }
   100% {
-    background-color: red;
-    -webkit-box-shadow: 0 0 10px 0 red;
-            box-shadow: 0 0 10px 0 red;
+    background: #7a0000;
+    -webkit-box-shadow: 0 0 5px 0 #7a0000;
+            box-shadow: 0 0 5px 0 #7a0000;
   }
 }
 
-@keyframes rgb {
+@keyframes backlight {
   0% {
-    background-color: red;
-    -webkit-box-shadow: 0 0 10px 0 red;
-            box-shadow: 0 0 10px 0 red;
+    background: #7a0000;
+    -webkit-box-shadow: 0 0 7px 0 #7a0000;
+            box-shadow: 0 0 7px 0 #7a0000;
   }
   50% {
-    background-color: blue;
-    -webkit-box-shadow: 0 0 10px 0 blue;
-            box-shadow: 0 0 10px 0 blue;
+    background: #e60000;
+    -webkit-box-shadow: 0 0 15px 2px red;
+            box-shadow: 0 0 15px 2px red;
   }
   100% {
-    background-color: red;
-    -webkit-box-shadow: 0 0 10px 0 red;
-            box-shadow: 0 0 10px 0 red;
+    background: #7a0000;
+    -webkit-box-shadow: 0 0 5px 0 #7a0000;
+            box-shadow: 0 0 5px 0 #7a0000;
   }
 }
