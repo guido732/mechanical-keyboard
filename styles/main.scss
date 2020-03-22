@@ -44,15 +44,21 @@ $key-radius-bottom: 0.5rem;
 // Element Base Styling
 body {
 	background: $bg;
-	// font-family: "Roboto", sans-serif;
-	// font-family: "Varela Round", sans-serif;
-	// font-family: "Lato", sans-serif;
 	font-family: "Baloo 2", cursive;
+}
+h1 {
+	color: white;
+	opacity: 0.3;
+	font-size: 8rem;
+	margin-top: -3rem;
+	margin-bottom: -2rem;
+	// font-style: oblique;
 }
 
 // Components
 .container {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	width: 100vw;
@@ -99,6 +105,7 @@ body {
 			display: flex;
 			width: min-content;
 			margin-bottom: $key-gap;
+			position: relative;
 			&:last-child {
 				margin-bottom: 0;
 			}
@@ -135,6 +142,9 @@ body {
 	border-right: 0.35rem solid $neutral-shadow;
 	border-bottom: 0.6rem solid $neutral-shadow;
 	border-left: 0.35rem solid $neutral-shadow;
+	user-select: none;
+	// transition: transform 0.2s ease-out;
+
 	&::after {
 		content: "";
 		position: absolute;
@@ -192,6 +202,10 @@ body {
 			width: $key-base;
 			height: calcDim((2));
 		}
+	}
+	&--pressed {
+		transform: translateY(0.2rem);
+		transition: transform 0.1s;
 	}
 }
 

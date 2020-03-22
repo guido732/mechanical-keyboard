@@ -11,10 +11,22 @@ body {
   font-family: "Baloo 2", cursive;
 }
 
+h1 {
+  color: white;
+  opacity: 0.3;
+  font-size: 8rem;
+  margin-top: -3rem;
+  margin-bottom: -2rem;
+}
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -88,6 +100,7 @@ body {
   width: -moz-min-content;
   width: min-content;
   margin-bottom: 0.3125rem;
+  position: relative;
 }
 
 .keyboard__section__row:last-child {
@@ -136,6 +149,10 @@ body {
   border-right: 0.35rem solid gainsboro;
   border-bottom: 0.6rem solid gainsboro;
   border-left: 0.35rem solid gainsboro;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .key::after {
@@ -207,6 +224,15 @@ body {
 .key--vert--5 {
   width: 4rem;
   height: 8.3125rem;
+}
+
+.key--pressed {
+  -webkit-transform: translateY(0.2rem);
+          transform: translateY(0.2rem);
+  -webkit-transition: -webkit-transform 0.1s;
+  transition: -webkit-transform 0.1s;
+  transition: transform 0.1s;
+  transition: transform 0.1s, -webkit-transform 0.1s;
 }
 
 .text-center {
