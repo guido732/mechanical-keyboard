@@ -5,6 +5,7 @@ document.addEventListener("keydown", function(event) {
 	audio.currentTime = 0;
 	audio.play();
 	document.querySelector(`[data-key='${key}']`).classList.add("key--pressed");
+	moveBackgroundelements();
 });
 document.addEventListener("keyup", function(event) {
 	const key = event.code;
@@ -20,8 +21,6 @@ document.addEventListener("click", evt => {
 	let targetElement = evt.target; // clicked element
 	do {
 		if (targetElement == keyboard) {
-			console.log("clicked inside keyboard");
-
 			return;
 		}
 		targetElement = targetElement.parentNode;
@@ -64,4 +63,33 @@ function toggleBacklight() {
 	this.checked
 		? $keyboard.forEach(section => section.classList.add("keyboard__section--backlight-active"))
 		: $keyboard.forEach(section => section.classList.remove("keyboard__section--backlight-active"));
+}
+function moveBackgroundelements() {
+	const elements = document.querySelectorAll(".background__element");
+	elements.forEach(element => {
+		const rand = Math.random() * Math.random();
+		let position = +element.getAttribute(["data-posx"]);
+		let direction = element.getAttribute(["data-dir"]);
+		if (position + rand >= 50 && direction === "ltr") {
+			element.setAttribute(["data-dir"], "rtl");
+			direction = "rtl";
+		}
+		if (position - rand <= 0 && direction === "rtl") {
+			element.setAttribute(["data-dir"], "ltr");
+			direction = "ltr";
+		}
+		if (direction === "ltr") {
+			element.setAttribute(["data-posx"], position + rand);
+			element.style.transform = `translateX(${position + rand}%)`;
+			if (position >= 50) {
+				element.setAttribute(["data-dir"], "rtl");
+			}
+		} else if (direction === "rtl") {
+			element.setAttribute(["data-posx"], position - rand);
+			element.style.transform = `translateX(${position - rand}%)`;
+			if (position <= 0) {
+				element.setAttribute(["data-dir"], "ltr");
+			}
+		}
+	});
 }

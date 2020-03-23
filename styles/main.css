@@ -6,11 +6,9 @@
 }
 
 h1 {
-  color: white;
-  opacity: 0.3;
-  font-size: 8rem;
-  margin-top: -3rem;
-  margin-bottom: -2rem;
+  color: #a9c3d4;
+  font-size: 6rem;
+  margin-bottom: -1rem;
 }
 
 button {
@@ -18,7 +16,7 @@ button {
 }
 
 .container {
-  background: linear-gradient(165deg, #6593b2 0%, #223543 100%);
+  background: linear-gradient(165deg, #346e96 0%, #192832 100%);
   font-family: "Baloo 2", cursive;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -269,10 +267,10 @@ button {
 .key--pressed {
   -webkit-transform: translateY(0.2rem);
           transform: translateY(0.2rem);
-  -webkit-transition: -webkit-transform 0.1s;
-  transition: -webkit-transform 0.1s;
-  transition: transform 0.1s;
-  transition: transform 0.1s, -webkit-transform 0.1s;
+  -webkit-transition: -webkit-transform 0.05s;
+  transition: -webkit-transform 0.05s;
+  transition: transform 0.05s;
+  transition: transform 0.05s, -webkit-transform 0.05s;
 }
 
 .key--convex {
@@ -334,6 +332,48 @@ button {
   padding: 0.5rem 1rem;
   width: 12rem;
   border: none;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.background__element {
+  position: relative;
+  margin-left: -100%;
+  width: 200%;
+}
+
+.background__element--multi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.background__element--multi svg:last-of-type {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.background__element--wave {
+  position: absolute;
+  margin-left: -100%;
+  width: 200%;
+  top: 0;
+  right: 0;
+  mix-blend-mode: overlay;
+  opacity: 0.04;
+  z-index: -100;
 }
 
 .text-center {
