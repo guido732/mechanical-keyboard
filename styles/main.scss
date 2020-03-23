@@ -1,13 +1,12 @@
 // Variables
-$primary: hsl(9, 82%, 72%);
-$primary: hsl(9, 75%, 72%);
-$secondary: #3b5e76;
+$primary: #ed9282;
+$secondary: #2f5b79;
 $neutral: #f3f3f3;
 
 $bg: linear-gradient(165deg, saturate(darken($secondary, 5), 15) 0%, darken($secondary, 20) 100%);
-$bg-backlit-shadow-bright: rgb(230, 45, 45);
-$bg-backlit-bright: rgb(216, 0, 0);
-$bg-backlit-dim: rgb(122, 0, 0);
+$bg-backlit-shadow-bright: #e62d2d;
+$bg-backlit-bright: #d80000;
+$bg-backlit-dim: #7a0000;
 // $bg-options-panel: linear-gradient(180deg, darken($secondary, 15) 5%, $secondary 25%, darken($secondary, 10) 100%);
 $bg-options-panel: darken($secondary, 15);
 $case-body-background: darken($secondary, 20);
@@ -37,6 +36,7 @@ $key-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
 	border-right: 0.35rem solid darken($baseColor, 8);
 	border-left: 0.35rem solid darken($baseColor, 8);
 	border-bottom: 0.6rem solid desaturate(darken($baseColor, 13), 10);
+	box-shadow: $key-shadow, inset -1px -1px 5px 0 lighten($baseColor, 1);
 }
 
 // Resets
@@ -169,8 +169,8 @@ button {
 	font-size: 0.7rem;
 	font-weight: 500;
 	user-select: none;
-	box-shadow: $key-shadow;
 	@include keyStyles();
+
 	&:last-child {
 		margin-right: 0;
 	}

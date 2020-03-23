@@ -5,7 +5,8 @@ document.addEventListener("keydown", function(event) {
 	audio.currentTime = 0;
 	audio.play();
 	document.querySelector(`[data-key='${key}']`).classList.add("key--pressed");
-	moveBackgroundelements();
+	moveBackgroundelements(".background__element--wave");
+	rotateBackgroundelements(".background__element--blob__svg");
 });
 document.addEventListener("keyup", function(event) {
 	const key = event.code;
@@ -64,8 +65,8 @@ function toggleBacklight() {
 		? $keyboard.forEach(section => section.classList.add("keyboard__section--backlight-active"))
 		: $keyboard.forEach(section => section.classList.remove("keyboard__section--backlight-active"));
 }
-function moveBackgroundelements() {
-	const elements = document.querySelectorAll(".background__element--wave");
+function moveBackgroundelements(selector) {
+	const elements = document.querySelectorAll(selector);
 	elements.forEach(element => {
 		const rand = Math.random() * Math.random();
 		let position = +element.getAttribute(["data-posx"]);
@@ -91,5 +92,14 @@ function moveBackgroundelements() {
 				element.setAttribute(["data-dir"], "ltr");
 			}
 		}
+	});
+}
+function rotateBackgroundelements(selector) {
+	const elements = document.querySelectorAll(selector);
+	elements.forEach(element => {
+		const rotation = +element.getAttribute(["data-rotation"]);
+		const rand = Math.random();
+		element.style.transform = `rotate(${rotation + rand}deg)`;
+		element.setAttribute(["data-rotation"], rotation + rand);
 	});
 }

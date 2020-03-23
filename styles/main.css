@@ -6,7 +6,7 @@
 }
 
 h1 {
-  color: #a9c3d4;
+  color: #9cc0d8;
   font-size: 6rem;
   margin-bottom: -1rem;
 }
@@ -16,7 +16,7 @@ button {
 }
 
 .container {
-  background: linear-gradient(165deg, #275370 0%, #192832 100%);
+  background: linear-gradient(165deg, #1d4f71 0%, #122430 100%);
   font-family: "Baloo 2", cursive;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,10 +42,10 @@ button {
   display: flex;
   position: relative;
   border-radius: 0.5rem;
-  border-top: 0.75rem solid #4c7998;
-  border-right: 0.75rem solid #446c87;
-  border-left: 0.75rem solid #446c87;
-  border-bottom: 0.75rem solid #2f4b5e;
+  border-top: 0.75rem solid #3d779e;
+  border-right: 0.75rem solid #36698b;
+  border-left: 0.75rem solid #36698b;
+  border-bottom: 0.75rem solid #25485f;
 }
 
 .keyboard::before {
@@ -56,7 +56,7 @@ button {
   width: calc(100% + (1.5rem));
   height: 2rem;
   z-index: -1;
-  background-color: #192832;
+  background-color: #122430;
   border-bottom-left-radius: 1.2rem;
   border-bottom-right-radius: 1.2rem;
   -webkit-box-shadow: 0 1.5rem 2rem 0rem #172635;
@@ -71,7 +71,7 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #192832;
+  background-color: #122430;
   border-radius: 0.5rem;
   padding: 0.25rem 0.3125rem 0 0.25rem;
 }
@@ -126,7 +126,7 @@ button {
 .keyboard__corner {
   width: 0.25rem;
   height: 1rem;
-  background: #192832;
+  background: #122430;
   position: absolute;
 }
 
@@ -182,15 +182,13 @@ button {
           justify-content: space-between;
   margin-right: 0.3125rem;
   padding: 0.15rem 0.5rem;
-  color: #3b5e76;
+  color: #2f5b79;
   font-size: 0.7rem;
   font-weight: 500;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
-          box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
   background: -webkit-gradient(linear, left top, right top, from(#e9e9e9), color-stop(20%, #f3f3f3), color-stop(80%, #f3f3f3), to(#e9e9e9));
   background: linear-gradient(90deg, #e9e9e9 0%, #f3f3f3 20%, #f3f3f3 80%, #e9e9e9);
   border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
@@ -198,6 +196,8 @@ button {
   border-right: 0.35rem solid #dfdfdf;
   border-left: 0.35rem solid #dfdfdf;
   border-bottom: 0.6rem solid #d2d2d2;
+  -webkit-box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5), inset -1px -1px 5px 0 #f6f6f6;
+          box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5), inset -1px -1px 5px 0 #f6f6f6;
 }
 
 .key:last-child {
@@ -205,25 +205,29 @@ button {
 }
 
 .key--primary {
-  color: #3b5e76;
-  background: -webkit-gradient(linear, left top, right top, from(#eb8370), color-stop(20%, #ed9282), color-stop(80%, #ed9282), to(#eb8370));
-  background: linear-gradient(90deg, #eb8370 0%, #ed9282 20%, #ed9282 80%, #eb8370);
+  color: #2f5b79;
+  background: -webkit-gradient(linear, left top, right top, from(#ea8270), color-stop(20%, #ed9282), color-stop(80%, #ed9282), to(#ea8270));
+  background: linear-gradient(90deg, #ea8270 0%, #ed9282 20%, #ed9282 80%, #ea8270);
   border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
   border-top: 0.15rem solid #e76b55;
   border-right: 0.35rem solid #e8735e;
   border-left: 0.35rem solid #e8735e;
-  border-bottom: 0.6rem solid #da6752;
+  border-bottom: 0.6rem solid #da6753;
+  -webkit-box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5), inset -1px -1px 5px 0 #ee9686;
+          box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5), inset -1px -1px 5px 0 #ee9686;
 }
 
 .key--secondary {
   color: #ed9282;
-  background: -webkit-gradient(linear, left top, right top, from(#345368), color-stop(20%, #3b5e76), color-stop(80%, #3b5e76), to(#345368));
-  background: linear-gradient(90deg, #345368 0%, #3b5e76 20%, #3b5e76 80%, #345368);
+  background: -webkit-gradient(linear, left top, right top, from(#29506a), color-stop(20%, #2f5b79), color-stop(80%, #2f5b79), to(#29506a));
+  background: linear-gradient(90deg, #29506a 0%, #2f5b79 20%, #2f5b79 80%, #29506a);
   border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
-  border-top: 0.15rem solid #2a4354;
-  border-right: 0.35rem solid #2d485b;
-  border-left: 0.35rem solid #2d485b;
-  border-bottom: 0.6rem solid #2a3a44;
+  border-top: 0.15rem solid #213f54;
+  border-right: 0.35rem solid #24455c;
+  border-left: 0.35rem solid #24455c;
+  border-bottom: 0.6rem solid #223644;
+  -webkit-box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5), inset -1px -1px 5px 0 #305e7d;
+          box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5), inset -1px -1px 5px 0 #305e7d;
 }
 
 .key--2 {
@@ -303,7 +307,7 @@ button {
   max-height: 0;
   font-size: 1.5rem;
   color: white;
-  background: #223543;
+  background: #1a3242;
   -webkit-box-shadow: 0 15px 15px 0 rgba(104, 143, 168, 0.05);
           box-shadow: 0 15px 15px 0 rgba(104, 143, 168, 0.05);
   -webkit-transition: max-height 0.2s ease-out;
@@ -364,15 +368,15 @@ button {
 }
 
 .background__element--blob__svg path {
-  -webkit-filter: drop-shadow(2px 5px 5px #192832);
-          filter: drop-shadow(2px 5px 5px #192832);
-  filter: drop-shadow(2px 5px 5px #192832);
+  -webkit-filter: drop-shadow(2px 5px 5px #122430);
+          filter: drop-shadow(2px 5px 5px #122430);
+  filter: drop-shadow(2px 5px 5px #122430);
 }
 
 .background__element--blob__svg--1 {
   left: 0rem;
   top: 0rem;
-  fill: #f0a698;
+  fill: #f0a598;
 }
 
 .background__element--blob__svg--2 {
