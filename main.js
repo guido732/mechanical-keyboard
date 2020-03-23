@@ -36,6 +36,10 @@ $accordeonBtn.addEventListener("click", togglePanelVisibility);
 const $backlight = document.querySelector("#backlight");
 $backlight.checked = false;
 $backlight.addEventListener("change", toggleBacklight);
+// Theme Selector
+const selector = document.querySelector("#pallete");
+selector.value = "coral"; //sets default value in case page is reloaded so it defaults to coral sea
+selector.addEventListener("change", selectTheme);
 
 function clearPressed() {
 	document.querySelectorAll(".key").forEach(key => key.classList.remove("key--pressed"));
@@ -102,4 +106,25 @@ function rotateBackgroundelements(selector) {
 		element.style.transform = `rotate(${rotation + rand}deg)`;
 		element.setAttribute(["data-rotation"], rotation + rand);
 	});
+}
+function selectTheme(e) {
+	const palleteSelector = { coral: "coral-sea", sky: "sky-city", jungle: "jungle-mystery" };
+	const theme = e.target.value;
+	const $stylesheet = document.querySelector("#stylesheet");
+	$stylesheet.setAttribute("href", `./styles/${palleteSelector[theme]}.min.css`);
+	switch (theme) {
+		case "sky":
+			document.querySelectorAll(".background__element--wave").forEach(element => (element.style.display = "none"));
+			document.querySelectorAll(".background__element--blob__svg").forEach(element => (element.style.display = "none"));
+			break;
+		case "coral":
+			document.querySelectorAll(".background__element--wave").forEach(element => (element.style.display = "unset"));
+			document
+				.querySelectorAll(".background__element--blob__svg")
+				.forEach(element => (element.style.display = "unset"));
+			break;
+
+		default:
+			break;
+	}
 }
