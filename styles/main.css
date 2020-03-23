@@ -350,21 +350,6 @@ button {
   width: 200%;
 }
 
-.background__element--multi {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-}
-
-.background__element--multi svg:last-of-type {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
 .background__element--wave {
   position: absolute;
   margin-left: -100%;
@@ -374,6 +359,10 @@ button {
   mix-blend-mode: overlay;
   opacity: 0.04;
   z-index: -100;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .text-center {

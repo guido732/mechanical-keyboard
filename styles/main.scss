@@ -271,17 +271,6 @@ button {
 		position: relative;
 		margin-left: -100%;
 		width: 200%;
-		&--multi {
-			display: flex;
-			flex-flow: row nowrap;
-			svg {
-				&:last-of-type {
-					transform: rotateY(180deg);
-				}
-			}
-		}
-	}
-	&__element {
 		&--wave {
 			position: absolute;
 			margin-left: -100%;
@@ -291,6 +280,7 @@ button {
 			mix-blend-mode: overlay;
 			opacity: 0.04;
 			z-index: -100;
+			transition: transform 0.3s ease;
 		}
 	}
 }
