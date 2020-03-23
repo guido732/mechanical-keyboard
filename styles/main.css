@@ -16,7 +16,7 @@ button {
 }
 
 .container {
-  background: linear-gradient(165deg, #346e96 0%, #192832 100%);
+  background: linear-gradient(165deg, #275370 0%, #192832 100%);
   font-family: "Baloo 2", cursive;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -303,8 +303,8 @@ button {
   max-height: 0;
   font-size: 1.5rem;
   color: white;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.1)));
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #223543), color-stop(25%, #3b5e76), to(#2a4354));
+  background: linear-gradient(180deg, #223543 5%, #3b5e76 25%, #2a4354 100%);
   -webkit-box-shadow: 0 15px 15px 0 rgba(104, 143, 168, 0.05);
           box-shadow: 0 15px 15px 0 rgba(104, 143, 168, 0.05);
   -webkit-transition: max-height 0.2s ease-out;
