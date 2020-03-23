@@ -303,8 +303,7 @@ button {
   max-height: 0;
   font-size: 1.5rem;
   color: white;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #223543), color-stop(25%, #3b5e76), to(#2a4354));
-  background: linear-gradient(180deg, #223543 5%, #3b5e76 25%, #2a4354 100%);
+  background: #223543;
   -webkit-box-shadow: 0 15px 15px 0 rgba(104, 143, 168, 0.05);
           box-shadow: 0 15px 15px 0 rgba(104, 143, 168, 0.05);
   -webkit-transition: max-height 0.2s ease-out;
@@ -345,13 +344,12 @@ button {
 }
 
 .background__element {
-  position: relative;
-  margin-left: -100%;
-  width: 200%;
+  position: absolute;
 }
 
 .background__element--wave {
-  position: absolute;
+  margin-left: -100%;
+  width: 200%;
   margin-left: -100%;
   width: 200%;
   top: 0;
@@ -363,6 +361,30 @@ button {
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.background__element--blob__svg path {
+  -webkit-filter: drop-shadow(2px 5px 5px #192832);
+          filter: drop-shadow(2px 5px 5px #192832);
+  filter: drop-shadow(2px 5px 5px #192832);
+}
+
+.background__element--blob__svg--1 {
+  left: 0rem;
+  top: 0rem;
+  fill: #f0a698;
+}
+
+.background__element--blob__svg--2 {
+  right: 0rem;
+  top: -5rem;
+  fill: #ed9282;
+}
+
+.background__element--blob__svg--3 {
+  right: 15rem;
+  bottom: -5rem;
+  fill: #e76b55;
 }
 
 .text-center {
@@ -402,9 +424,9 @@ button {
             box-shadow: 0 0 7px 0 #7a0000;
   }
   50% {
-    background: #e60000;
-    -webkit-box-shadow: 0 0 15px 2px red;
-            box-shadow: 0 0 15px 2px red;
+    background: #d80000;
+    -webkit-box-shadow: 0 0 15px 2px #e62d2d;
+            box-shadow: 0 0 15px 2px #e62d2d;
   }
   100% {
     background: #7a0000;
@@ -420,9 +442,9 @@ button {
             box-shadow: 0 0 7px 0 #7a0000;
   }
   50% {
-    background: #e60000;
-    -webkit-box-shadow: 0 0 15px 2px red;
-            box-shadow: 0 0 15px 2px red;
+    background: #d80000;
+    -webkit-box-shadow: 0 0 15px 2px #e62d2d;
+            box-shadow: 0 0 15px 2px #e62d2d;
   }
   100% {
     background: #7a0000;

@@ -5,18 +5,18 @@ $secondary: #3b5e76;
 $neutral: #f3f3f3;
 
 $bg: linear-gradient(165deg, saturate(darken($secondary, 5), 15) 0%, darken($secondary, 20) 100%);
-$bg-backlit-shadow-bright: red;
-$bg-backlit-bright: rgb(230, 0, 0);
+$bg-backlit-shadow-bright: rgb(230, 45, 45);
+$bg-backlit-bright: rgb(216, 0, 0);
 $bg-backlit-dim: rgb(122, 0, 0);
-$bg-options-panel: linear-gradient(180deg, darken($secondary, 15) 5%, $secondary 25%, darken($secondary, 10) 100%);
+// $bg-options-panel: linear-gradient(180deg, darken($secondary, 15) 5%, $secondary 25%, darken($secondary, 10) 100%);
+$bg-options-panel: darken($secondary, 15);
 $case-body-background: darken($secondary, 20);
-$case-width: 0.75rem;
 $case-shadow: 0 1.5rem 2rem 0rem #172635;
 $key-gap: 0.3125rem;
 $key-base-size: 4rem;
-$key-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
 $key-radius-top: 0.3125rem;
 $key-radius-bottom: 0.5rem;
+$key-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
 
 // Functions
 @function calcDim($baseMult: 1) {
@@ -71,10 +71,10 @@ button {
 	display: flex;
 	position: relative;
 	border-radius: 0.5rem;
-	border-top: $case-width solid lighten($secondary, 10);
-	border-right: $case-width solid lighten($secondary, 5);
-	border-left: $case-width solid lighten($secondary, 5);
-	border-bottom: $case-width solid darken($secondary, 7);
+	border-top: 0.75rem solid lighten($secondary, 10);
+	border-right: 0.75rem solid lighten($secondary, 5);
+	border-left: 0.75rem solid lighten($secondary, 5);
+	border-bottom: 0.75rem solid darken($secondary, 7);
 	&::before {
 		content: "";
 		position: absolute;
@@ -268,11 +268,10 @@ button {
 	z-index: -10;
 	overflow: hidden;
 	&__element {
-		position: relative;
-		margin-left: -100%;
-		width: 200%;
+		position: absolute;
 		&--wave {
-			position: absolute;
+			margin-left: -100%;
+			width: 200%;
 			margin-left: -100%;
 			width: 200%;
 			top: 0;
@@ -281,6 +280,30 @@ button {
 			opacity: 0.04;
 			z-index: -100;
 			transition: transform 0.3s ease;
+		}
+		&--blob {
+			&__svg {
+				// fill: lighten($primary, 5);
+				path {
+					filter: drop-shadow(2px 5px 5px darken($secondary, 20));
+					filter: drop-shadow(2px 5px 5px darken($secondary, 20));
+				}
+				&--1 {
+					left: 0rem;
+					top: 0rem;
+					fill: lighten($primary, 5);
+				}
+				&--2 {
+					right: 0rem;
+					top: -5rem;
+					fill: $primary;
+				}
+				&--3 {
+					right: 15rem;
+					bottom: -5rem;
+					fill: darken($primary, 10);
+				}
+			}
 		}
 	}
 }

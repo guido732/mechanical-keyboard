@@ -65,7 +65,7 @@ function toggleBacklight() {
 		: $keyboard.forEach(section => section.classList.remove("keyboard__section--backlight-active"));
 }
 function moveBackgroundelements() {
-	const elements = document.querySelectorAll(".background__element");
+	const elements = document.querySelectorAll(".background__element--wave");
 	elements.forEach(element => {
 		const rand = Math.random() * Math.random();
 		let position = +element.getAttribute(["data-posx"]);
