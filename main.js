@@ -1,3 +1,15 @@
+// Local Vars
+const colorThemes = { coral: "coral-sea", sky: "sky-city", jungle: "jungle-mystery" };
+// DOM Cache
+const $containerCoral = document.querySelector("background__container--coral");
+const $containerSky = document.querySelector("background__container--sky");
+const $containerJungle = document.querySelector("background__container--jungle");
+const $stylesheet = document.querySelector("#stylesheet");
+const $selector = document.querySelector("#pallete");
+const $backlight = document.querySelector("#backlight");
+const $accordeonBtn = document.querySelector(".options__button");
+const $panel = document.querySelector(".options__panel");
+
 // Keypress animation
 document.addEventListener("keydown", function(event) {
 	const key = event.code;
@@ -5,8 +17,8 @@ document.addEventListener("keydown", function(event) {
 	audio.currentTime = 0;
 	audio.play();
 	document.querySelector(`[data-key='${key}']`).classList.add("key--pressed");
-	moveBackgroundelements(".background__element--wave");
-	rotateBackgroundelements(".background__element--blob__svg");
+	moveBackgroundelements(document.querySelectorAll(".background__element--wave"));
+	rotateBackgroundelements(document.querySelectorAll(".background__element--blob__svg"));
 });
 document.addEventListener("keyup", function(event) {
 	const key = event.code;
@@ -28,22 +40,22 @@ document.addEventListener("click", evt => {
 	} while (targetElement);
 	clearPressed();
 });
+
 // Expansion panel
-const $accordeonBtn = document.querySelector(".options__button");
-const $panel = document.querySelector(".options__panel");
 $accordeonBtn.addEventListener("click", togglePanelVisibility);
+
 // Toggle backlight
-const $backlight = document.querySelector("#backlight");
 $backlight.checked = false;
 $backlight.addEventListener("change", toggleBacklight);
+
 // Theme Selector
-const selector = document.querySelector("#pallete");
-selector.value = "coral"; //sets default value in case page is reloaded so it defaults to coral sea
-selector.addEventListener("change", selectTheme);
+$selector.value = "coral"; //sets default value in case page is reloaded so it defaults to coral sea
+$selector.addEventListener("change", setTheme);
 
 function clearPressed() {
 	document.querySelectorAll(".key").forEach(key => key.classList.remove("key--pressed"));
 }
+// Refactor using length of querySelectorAll of audio atributes
 function getRandomAudio() {
 	const number = Math.floor(Math.random() * 5) + 1;
 	return number;
@@ -69,8 +81,7 @@ function toggleBacklight() {
 		? $keyboard.forEach(section => section.classList.add("keyboard__section--backlight-active"))
 		: $keyboard.forEach(section => section.classList.remove("keyboard__section--backlight-active"));
 }
-function moveBackgroundelements(selector) {
-	const elements = document.querySelectorAll(selector);
+function moveBackgroundelements(elements) {
 	elements.forEach(element => {
 		const rand = Math.random() * Math.random();
 		let position = +element.getAttribute(["data-posx"]);
@@ -98,8 +109,7 @@ function moveBackgroundelements(selector) {
 		}
 	});
 }
-function rotateBackgroundelements(selector) {
-	const elements = document.querySelectorAll(selector);
+function rotateBackgroundelements(elements) {
 	elements.forEach(element => {
 		const rotation = +element.getAttribute(["data-rotation"]);
 		const rand = Math.random();
@@ -107,24 +117,25 @@ function rotateBackgroundelements(selector) {
 		element.setAttribute(["data-rotation"], rotation + rand);
 	});
 }
-function selectTheme(e) {
-	const palleteSelector = { coral: "coral-sea", sky: "sky-city", jungle: "jungle-mystery" };
+function setTheme(e) {
 	const theme = e.target.value;
-	const $stylesheet = document.querySelector("#stylesheet");
-	$stylesheet.setAttribute("href", `./styles/${palleteSelector[theme]}.min.css`);
+	$stylesheet.setAttribute("href", `./styles/${colorThemes[theme]}.min.css`);
 	switch (theme) {
 		case "sky":
-			document.querySelectorAll(".background__element--wave").forEach(element => (element.style.display = "none"));
-			document.querySelectorAll(".background__element--blob__svg").forEach(element => (element.style.display = "none"));
 			break;
 		case "coral":
-			document.querySelectorAll(".background__element--wave").forEach(element => (element.style.display = "unset"));
-			document
-				.querySelectorAll(".background__element--blob__svg")
-				.forEach(element => (element.style.display = "unset"));
 			break;
-
+		case "jungle":
+			break;
 		default:
+			console.log("Si estás viendo ésto, algo malió sal");
 			break;
 	}
+}
+function getTheme() {
+	const activeStylesheet = $stylesheet
+		.getAttribute("href")
+		.split("/")[2]
+		.split(".")[0];
+	return activeStylesheet;
 }
