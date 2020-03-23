@@ -1,3 +1,10 @@
+// Variables
+$key-gap: 0.25rem;
+$key-base-size: 4rem;
+$key-radius-top: 0.3125rem;
+$key-radius-bottom: 0.5rem;
+$key-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
+
 // Functions
 @function calcDim($baseMult: 1) {
 	$result: ($key-base-size * $baseMult) + ($key-gap * ($baseMult - 1));
@@ -318,7 +325,7 @@ button {
 	}
 	50% {
 		background: $bg-backlit-bright;
-		box-shadow: 0 0 15px 2px $bg-backlit-shadow-bright;
+		box-shadow: 0 0 10px 4px $bg-backlit-bright;
 	}
 	100% {
 		background: $bg-backlit-dim;

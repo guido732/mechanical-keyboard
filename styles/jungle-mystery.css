@@ -71,9 +71,9 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: black;
+  background-color: #0d2a24;
   border-radius: 0.5rem;
-  padding: 0.25rem 0.3125rem 0 0.25rem;
+  padding: 0.25rem 0.25rem 0 0.25rem;
 }
 
 .keyboard__section:last-child {
@@ -98,7 +98,7 @@ button {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-  margin-bottom: 0.3125rem;
+  margin-bottom: 0.25rem;
   position: relative;
 }
 
@@ -111,7 +111,7 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-right: 0.3125rem;
+  margin-right: 0.25rem;
 }
 
 .keyboard__section__row--vertical:last-child {
@@ -126,7 +126,7 @@ button {
 .keyboard__corner {
   width: 0.25rem;
   height: 1rem;
-  background: black;
+  background: #0d2a24;
   position: absolute;
 }
 
@@ -180,7 +180,7 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-right: 0.3125rem;
+  margin-right: 0.25rem;
   padding: 0.15rem 0.5rem;
   color: #2a8c79;
   font-size: 0.7rem;
@@ -231,31 +231,31 @@ button {
 }
 
 .key--2 {
-  width: 5.07812rem;
+  width: 5.0625rem;
 }
 
 .key--3 {
-  width: 6.15625rem;
+  width: 6.125rem;
 }
 
 .key--4 {
-  width: 7.23438rem;
+  width: 7.1875rem;
 }
 
 .key--5 {
-  width: 8.3125rem;
+  width: 8.25rem;
 }
 
 .key--6 {
-  width: 9.39062rem;
+  width: 9.3125rem;
 }
 
 .key--7 {
-  width: 26.64062rem;
+  width: 26.3125rem;
 }
 
 .key--vert {
-  margin-bottom: 0.3125rem;
+  margin-bottom: 0.25rem;
   margin-right: 0;
 }
 
@@ -265,7 +265,7 @@ button {
 
 .key--vert--5 {
   width: 4rem;
-  height: 8.3125rem;
+  height: 8.25rem;
 }
 
 .key--pressed {
@@ -423,36 +423,36 @@ button {
 
 @-webkit-keyframes backlight {
   0% {
-    background: #7a0000;
-    -webkit-box-shadow: 0 0 7px 0 #7a0000;
-            box-shadow: 0 0 7px 0 #7a0000;
+    background: #00e6b8;
+    -webkit-box-shadow: 0 0 7px 0 #00e6b8;
+            box-shadow: 0 0 7px 0 #00e6b8;
   }
   50% {
-    background: #d80000;
-    -webkit-box-shadow: 0 0 15px 2px #e62d2d;
-            box-shadow: 0 0 15px 2px #e62d2d;
+    background: #00ffcc;
+    -webkit-box-shadow: 0 0 10px 4px #00ffcc;
+            box-shadow: 0 0 10px 4px #00ffcc;
   }
   100% {
-    background: #7a0000;
-    -webkit-box-shadow: 0 0 5px 0 #7a0000;
-            box-shadow: 0 0 5px 0 #7a0000;
+    background: #00e6b8;
+    -webkit-box-shadow: 0 0 5px 0 #00e6b8;
+            box-shadow: 0 0 5px 0 #00e6b8;
   }
 }
 
 @keyframes backlight {
   0% {
-    background: #7a0000;
-    -webkit-box-shadow: 0 0 7px 0 #7a0000;
-            box-shadow: 0 0 7px 0 #7a0000;
+    background: #00e6b8;
+    -webkit-box-shadow: 0 0 7px 0 #00e6b8;
+            box-shadow: 0 0 7px 0 #00e6b8;
   }
   50% {
-    background: #d80000;
-    -webkit-box-shadow: 0 0 15px 2px #e62d2d;
-            box-shadow: 0 0 15px 2px #e62d2d;
+    background: #00ffcc;
+    -webkit-box-shadow: 0 0 10px 4px #00ffcc;
+            box-shadow: 0 0 10px 4px #00ffcc;
   }
   100% {
-    background: #7a0000;
-    -webkit-box-shadow: 0 0 5px 0 #7a0000;
-            box-shadow: 0 0 5px 0 #7a0000;
+    background: #00e6b8;
+    -webkit-box-shadow: 0 0 5px 0 #00e6b8;
+            box-shadow: 0 0 5px 0 #00e6b8;
   }
 }
