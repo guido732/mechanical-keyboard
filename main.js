@@ -12,7 +12,7 @@
 	const $backlight = document.querySelector("#backlight");
 	const $accordeonBtn = document.querySelector(".options__button");
 	const $panel = document.querySelector(".options__panel");
-
+	const activeTheme = getTheme();
 	// Events
 	// Keypress animation
 	document.addEventListener("keydown", function(event) {
@@ -46,9 +46,10 @@
 	});
 
 	// On Load Event
-	$selector.value = "coral"; //sets default value in case page is reloaded so it defaults to coral sea
-	handleBackground("coral");
-	handleBackgroundElements("coral");
+	// $selector.value = "coral"; //sets default value in case page is reloaded so it defaults to coral sea
+	setTheme(activeTheme);
+	handleBackground(activeTheme);
+	handleBackgroundElements(activeTheme);
 
 	// Expansion panel
 	$accordeonBtn.addEventListener("click", togglePanelVisibility);
@@ -133,11 +134,7 @@
 		$stylesheet.setAttribute("href", `./styles/${colorThemes[theme]}.min.css`);
 	}
 	function getTheme() {
-		const activeStylesheet = $stylesheet
-			.getAttribute("href")
-			.split("/")[2]
-			.split(".")[0];
-		return activeStylesheet;
+		return $selector.value;
 	}
 	function handleBackground(theme) {
 		switch (theme) {
