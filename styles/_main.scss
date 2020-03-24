@@ -299,9 +299,24 @@ button {
 			max-width: 100%;
 			margin: 2rem;
 		}
+		&--jungle-circle {
+			width: 55rem;
+			height: 55rem;
+			border-radius: 50%;
+			background: linear-gradient(165deg, darken($secondary, 15), darken($secondary, 30));
+			box-shadow: inset 20px 20px 10px 0 darken($secondary, 25);
+		}
+		&--sky-circle {
+			width: 45rem;
+			height: 45rem;
+			border-radius: 50%;
+			background: linear-gradient(165deg, desaturate($primary, 20), desaturate(darken($primary, 30), 20));
+			box-shadow: 5px 15px 10px 0 darken($secondary, 35);
+		}
 	}
 	&__container {
-		&--jungle {
+		&--jungle,
+		&--sky {
 			height: 100%;
 			display: flex;
 			align-items: center;

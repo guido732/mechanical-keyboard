@@ -397,7 +397,25 @@ button {
   margin: 2rem;
 }
 
-.background__container--jungle {
+.background__element--jungle-circle {
+  width: 55rem;
+  height: 55rem;
+  border-radius: 50%;
+  background: linear-gradient(165deg, #1a3242, #04080b);
+  -webkit-box-shadow: inset 20px 20px 10px 0 #0b161d;
+          box-shadow: inset 20px 20px 10px 0 #0b161d;
+}
+
+.background__element--sky-circle {
+  width: 45rem;
+  height: 45rem;
+  border-radius: 50%;
+  background: linear-gradient(165deg, #df9c90, #a64230);
+  -webkit-box-shadow: 5px 15px 10px 0 black;
+          box-shadow: 5px 15px 10px 0 black;
+}
+
+.background__container--jungle, .background__container--sky {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
