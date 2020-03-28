@@ -39,7 +39,12 @@ input {
 	margin-bottom: 1rem;
 	border: none;
 	background-color: transparent;
-	width: min-content;
+	&::placeholder {
+		color: lighten($secondary, 40);
+	}
+	&:focus {
+		outline: none;
+	}
 }
 button {
 	font-family: "Baloo 2", cursive;

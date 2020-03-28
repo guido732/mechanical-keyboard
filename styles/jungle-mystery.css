@@ -11,9 +11,26 @@ input {
   margin-bottom: 1rem;
   border: none;
   background-color: transparent;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
+}
+
+input::-webkit-input-placeholder {
+  color: #a0e2d5;
+}
+
+input:-ms-input-placeholder {
+  color: #a0e2d5;
+}
+
+input::-ms-input-placeholder {
+  color: #a0e2d5;
+}
+
+input::placeholder {
+  color: #a0e2d5;
+}
+
+input:focus {
+  outline: none;
 }
 
 button {

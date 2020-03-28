@@ -9,23 +9,29 @@
 	const $containerJungle = document.querySelector(".background__container--jungle");
 	const $stylesheet = document.querySelector("#stylesheet");
 	const $selector = document.querySelector("#pallete");
+	const $inputBar = document.querySelector("#input-bar");
 	const $backlight = document.querySelector("#backlight");
 	const $accordeonBtn = document.querySelector(".options__button");
 	const $panel = document.querySelector(".options__panel");
 	const activeTheme = getTheme();
 	// Events
 	// Keypress animation
-	document.addEventListener("keydown", function(event) {
-		const key = event.code;
-		const audio = document.querySelector(`[data-audio="${getRandomAudio()}"]`);
-		audio.currentTime = 0;
-		audio.play();
-		document.querySelector(`[data-key='${key}']`).classList.add("key--pressed");
-		moveBackgroundelements(movingBackgroundElements);
-		rotateBackgroundelements(rotatingBackgroundElements);
+	document.addEventListener("keydown", function(e) {
+		e.preventDefault();
+		const key = e.code;
+		const repeat = e.repeat;
+		if (!repeat) {
+			const audio = document.querySelector(`[data-audio="${getRandomAudio()}"]`);
+			audio.currentTime = 0;
+			audio.play();
+			document.querySelector(`[data-key='${key}']`).classList.add("key--pressed");
+			moveBackgroundelements(movingBackgroundElements);
+			rotateBackgroundelements(rotatingBackgroundElements);
+		}
+		$inputBar.focus();
 	});
-	document.addEventListener("keyup", function(event) {
-		const key = event.code;
+	document.addEventListener("keyup", function(e) {
+		const key = e.code;
 		document.querySelector(`[data-key='${key}']`).classList.remove("key--pressed");
 		if (key === "Escape") {
 			clearPressed();
@@ -33,9 +39,9 @@
 		}
 	});
 	// Clear all keys on click outside of keyboard
-	document.addEventListener("click", evt => {
+	document.addEventListener("click", e => {
 		const keyboard = document.querySelector(".keyboard");
-		let targetElement = evt.target; // clicked element
+		let targetElement = e.target; // clicked element
 		do {
 			if (targetElement == keyboard) {
 				return;
@@ -46,7 +52,6 @@
 	});
 
 	// On Load Event
-	// $selector.value = "coral"; //sets default value in case page is reloaded so it defaults to coral sea
 	setTheme(activeTheme);
 	handleBackground(activeTheme);
 	handleBackgroundElements(activeTheme);
