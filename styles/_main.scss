@@ -154,6 +154,9 @@ button {
 		.keyboard-long-only {
 			display: none;
 		}
+		.last {
+			margin-right: 0;
+		}
 	}
 	&.large {
 		.keyboard-short-only {
@@ -375,11 +378,6 @@ button {
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
 	white-space: nowrap; /* added line */
-}
-.keyboard-short-grow {
-	&:last-of-type {
-		margin-right: 0;
-	}
 }
 
 // Animations

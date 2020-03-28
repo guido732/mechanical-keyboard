@@ -16,8 +16,6 @@
 	const $panel = document.querySelector(".options__panel");
 	const activeTheme = getTheme();
 	const $loadscreen = document.querySelector(".loadscreen");
-	const $longOnly = document.querySelectorAll(".keyboard-long-only");
-	const $shortOnly = document.querySelectorAll(".keyboard-short-only");
 	const $sizeToggle = document.querySelector("#length");
 	const activeSize = getKeyboardSize();
 	const $shiftRight = document.querySelector("#shift-right");
@@ -201,8 +199,6 @@
 	function handleKeyboardSize(value) {
 		if (value) {
 			// Short Keyboard
-			console.log("short");
-
 			$keyboard.classList.add("short");
 			$keyboard.classList.remove("large");
 			$shiftRight.classList.remove("key--4");
@@ -210,7 +206,6 @@
 			$bottomRightControls.forEach(element => element.classList.add("key--2"));
 		} else {
 			// Large Keyboard
-			console.log("large");
 			$keyboard.classList.remove("short");
 			$keyboard.classList.add("large");
 			$shiftRight.classList.remove("key--7");

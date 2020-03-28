@@ -188,6 +188,10 @@ button {
   display: none;
 }
 
+.keyboard.short .last {
+  margin-right: 0;
+}
+
 .keyboard.large .keyboard-short-only {
   display: none;
 }
@@ -505,10 +509,6 @@ button {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
   /* added line */
-}
-
-.keyboard-short-grow:last-of-type {
-  margin-right: 0;
 }
 
 @-webkit-keyframes backlight {
