@@ -95,7 +95,6 @@ button {
 		padding: 0.25rem $key-gap 0 0.25rem;
 		&:last-child {
 			padding-left: 0;
-			// padding-right: 0;
 		}
 		&:first-child {
 			padding-right: 0;
@@ -113,9 +112,6 @@ button {
 		width: min-content;
 		margin-bottom: $key-gap;
 		position: relative;
-		&:last-child {
-			margin-bottom: 0;
-		}
 		&--vertical {
 			flex-direction: column;
 			margin-right: $key-gap;
@@ -152,6 +148,16 @@ button {
 			right: 0px;
 			transform: rotate(135deg);
 			transform-origin: 50% 100%;
+		}
+	}
+	&.short {
+		.keyboard-long-only {
+			display: none;
+		}
+	}
+	&.large {
+		.keyboard-short-only {
+			display: none;
 		}
 	}
 }
@@ -197,6 +203,10 @@ button {
 		width: calcDim(2.25);
 	}
 	&--7 {
+		width: calcDim(2.75);
+		margin-right: 0;
+	}
+	&--8 {
 		width: calcDim(6.25);
 	}
 	&--vert {
@@ -365,6 +375,11 @@ button {
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
 	white-space: nowrap; /* added line */
+}
+.keyboard-short-grow {
+	&:last-of-type {
+		margin-right: 0;
+	}
 }
 
 // Animations

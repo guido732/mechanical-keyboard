@@ -8,6 +8,7 @@
 	const $containerSky = document.querySelector(".background__container--sky");
 	const $containerJungle = document.querySelector(".background__container--jungle");
 	const $stylesheet = document.querySelector("#stylesheet");
+	const $keyboard = document.querySelector(".keyboard");
 	const $selector = document.querySelector("#pallete");
 	const $inputBar = document.querySelector("#input-bar");
 	const $backlight = document.querySelector("#backlight");
@@ -15,6 +16,13 @@
 	const $panel = document.querySelector(".options__panel");
 	const activeTheme = getTheme();
 	const $loadscreen = document.querySelector(".loadscreen");
+	const $longOnly = document.querySelectorAll(".keyboard-long-only");
+	const $shortOnly = document.querySelectorAll(".keyboard-short-only");
+	const $sizeToggle = document.querySelector("#length");
+	const activeSize = getKeyboardSize();
+	const $shiftRight = document.querySelector("#shift-right");
+	const $bottomRightControls = document.querySelectorAll(".keyboard-short-grow");
+
 	// Events
 	// Keypress animation
 	document.addEventListener("keydown", function(e) {
@@ -56,6 +64,8 @@
 	setTheme(activeTheme);
 	handleBackground(activeTheme);
 	handleBackgroundElements(activeTheme);
+	handleKeyboardSize(activeSize);
+	// Handle loadscreen
 	window.onload = () => {
 		document.querySelector(".keyboard").classList.remove("hidden");
 		document.querySelector(".options").classList.remove("hidden");
@@ -65,7 +75,6 @@
 			$loadscreen.parentNode.removeChild($loadscreen);
 		}, 1000);
 	};
-
 	// Expansion panel
 	$accordeonBtn.addEventListener("click", togglePanelVisibility);
 	// Toggle backlight
@@ -77,6 +86,11 @@
 		setTheme(theme);
 		handleBackground(theme);
 		handleBackgroundElements(theme);
+	});
+	// Toggle keyboard Size
+	$sizeToggle.addEventListener("change", () => {
+		const value = $sizeToggle.checked;
+		handleKeyboardSize(value);
 	});
 
 	// Functions and methods
@@ -151,6 +165,9 @@
 	function getTheme() {
 		return $selector.value;
 	}
+	function getKeyboardSize() {
+		return $sizeToggle.checked;
+	}
 	function handleBackground(theme) {
 		switch (theme) {
 			case "sky":
@@ -180,5 +197,25 @@
 		const movingElements = document.querySelectorAll(`.background__container--${theme} .moving`);
 		rotatingElements.forEach(element => rotatingBackgroundElements.push(element));
 		movingElements.forEach(element => movingBackgroundElements.push(element));
+	}
+	function handleKeyboardSize(value) {
+		if (value) {
+			// Short Keyboard
+			console.log("short");
+
+			$keyboard.classList.add("short");
+			$keyboard.classList.remove("large");
+			$shiftRight.classList.remove("key--4");
+			$shiftRight.classList.add("key--7");
+			$bottomRightControls.forEach(element => element.classList.add("key--2"));
+		} else {
+			// Large Keyboard
+			console.log("large");
+			$keyboard.classList.remove("short");
+			$keyboard.classList.add("large");
+			$shiftRight.classList.remove("key--7");
+			$shiftRight.classList.add("key--4");
+			$bottomRightControls.forEach(element => element.classList.remove("key--2"));
+		}
 	}
 })();

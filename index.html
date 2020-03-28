@@ -12,13 +12,13 @@
 	<body class="container">
 		<h1 class="visually-hidden">Mechanical Keyboard simulation</h1>
 		<input type="text" placeholder="Type Something..." autofocus id="input-bar" />
-		<div class="keyboard hidden">
+		<div class="keyboard hidden large">
 			<div class="keyboard__corner keyboard__corner--bl"></div>
 			<div class="keyboard__corner keyboard__corner--tl"></div>
 			<div class="keyboard__corner keyboard__corner--tr"></div>
 			<div class="keyboard__corner keyboard__corner--br"></div>
 			<div class="keyboard__section">
-				<div class="keyboard__row keyboard__row--lg">
+				<div class="keyboard__row keyboard__row--lg keyboard-long-only">
 					<div data-key="Escape" class="key text-lg  key--primary">ESC</div>
 					<div data-key="F1" class="key text-lg">F1</div>
 					<div data-key="F2" class="key text-lg">F2</div>
@@ -94,22 +94,25 @@
 					<div data-key="Comma" class="key text-lg"><span><</span><span>,</span></div>
 					<div data-key="Period" class="key text-lg"><span>></span><span>.</span></div>
 					<div data-key="Slash" class="key text-lg"><span>?</span><span>/</span></div>
-					<div data-key="ShiftRight" class="key text-end key--4 key--secondary">SHIFT</div>
-					<div data-key="ArrowUp" class="key text-lg text-center key--primary">&#9651;</div>
+					<div data-key="ShiftRight" id="shift-right" class="key text-end key--4 key--secondary">SHIFT</div>
+					<div data-key="ArrowUp" class="key text-lg text-center key--primary keyboard-long-only">&#9651;</div>
 				</div>
 				<div class="keyboard__row keyboard__row--lg">
 					<div data-key="ControlLeft" class="key text-center key--2 key--secondary">CTRL</div>
 					<div data-key="OSLeft" class="key text-center key--2 key--secondary">WIN</div>
 					<div data-key="AltLeft" class="key text-center key--2 key--secondary">ALT</div>
-					<div data-key="Space" class="key key--7 key--primary key--convex"></div>
-					<div data-key="AltRight" class="key text-center key--secondary">ALT</div>
-					<div data-key="OSRight" class="key text-center key--secondary">FN</div>
-					<div data-key="ControlRight" class="key text-center key--secondary">CTRL</div>
-					<div data-key="ArrowLeft" class="key text-lg text-center key--primary">&#9665;</div>
-					<div data-key="ArrowDown" class="key text-lg text-center key--primary">&#9661;</div>
+					<div data-key="Space" class="key key--8 key--primary key--convex"></div>
+					<div data-key="AltRight" class="key text-center key--secondary keyboard-short-grow">ALT</div>
+					<div data-key="ContextMenu" class="key text-center key--secondary keyboard-short-grow keyboard-short-only">
+						FN
+					</div>
+					<div data-key="OSRight" class="key text-center key--secondary keyboard-short-grow">WIN</div>
+					<div data-key="ControlRight" class="key text-center key--secondary keyboard-short-grow">CTRL</div>
+					<div data-key="ArrowLeft" class="key text-lg text-center key--primary keyboard-long-only">&#9665;</div>
+					<div data-key="ArrowDown" class="key text-lg text-center key--primary keyboard-long-only">&#9661;</div>
 				</div>
 			</div>
-			<div id="numpad" class="keyboard__section keyboard__section--vertical">
+			<div class="keyboard__section keyboard__section--vertical keyboard-long-only">
 				<div class="keyboard__row keyboard__row--vertical">
 					<div data-key="Home" class="key key--vert key--secondary">HOME</div>
 					<div data-key="NumLock" class="key key--vert key--secondary">NUM<br />LK</div>

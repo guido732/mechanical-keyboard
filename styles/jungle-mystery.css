@@ -129,10 +129,6 @@ button {
   position: relative;
 }
 
-.keyboard__row:last-child {
-  margin-bottom: 0;
-}
-
 .keyboard__row--vertical {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -186,6 +182,14 @@ button {
           transform: rotate(135deg);
   -webkit-transform-origin: 50% 100%;
           transform-origin: 50% 100%;
+}
+
+.keyboard.short .keyboard-long-only {
+  display: none;
+}
+
+.keyboard.large .keyboard-short-only {
+  display: none;
 }
 
 .key {
@@ -273,6 +277,11 @@ button {
 }
 
 .key--7 {
+  width: 11.4375rem;
+  margin-right: 0;
+}
+
+.key--8 {
   width: 26.3125rem;
 }
 
@@ -496,6 +505,10 @@ button {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
   /* added line */
+}
+
+.keyboard-short-grow:last-of-type {
+  margin-right: 0;
 }
 
 @-webkit-keyframes backlight {
