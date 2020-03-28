@@ -34,17 +34,19 @@ $key-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
 	box-sizing: border-box;
 }
 input {
-	color: lighten($secondary, 40);
 	font-size: 6rem;
 	margin-bottom: 1rem;
 	border: none;
 	background-color: transparent;
-	// width: 100%;
 	&::placeholder {
-		color: lighten($secondary, 40);
+		color: lighten($secondary, 50);
+		opacity: 1;
 	}
 	&:focus {
 		outline: none;
+	}
+	&[type="text"] {
+		width: 50rem;
 	}
 }
 button {

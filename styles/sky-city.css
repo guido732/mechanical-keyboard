@@ -6,7 +6,6 @@
 }
 
 input {
-  color: #fcfeff;
   font-size: 6rem;
   margin-bottom: 1rem;
   border: none;
@@ -14,23 +13,31 @@ input {
 }
 
 input::-webkit-input-placeholder {
-  color: #fcfeff;
+  color: white;
+  opacity: 1;
 }
 
 input:-ms-input-placeholder {
-  color: #fcfeff;
+  color: white;
+  opacity: 1;
 }
 
 input::-ms-input-placeholder {
-  color: #fcfeff;
+  color: white;
+  opacity: 1;
 }
 
 input::placeholder {
-  color: #fcfeff;
+  color: white;
+  opacity: 1;
 }
 
 input:focus {
   outline: none;
+}
+
+input[type="text"] {
+  width: 50rem;
 }
 
 button {
