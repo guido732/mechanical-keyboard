@@ -1,14 +1,12 @@
 // Variables
 $primary: #ed9282;
 $secondary: #2f5b79;
-$neutral: #f3f3f3;
+$neutral: #f0f0f0;
 
 $bg: linear-gradient(165deg, saturate(darken($secondary, 5), 15) 0%, darken($secondary, 20) 100%);
 $backlight-color: #ff5100;
 $bg-backlit-dim: darken($backlight-color, 5);
 $bg-backlit-bright: $backlight-color;
-// $bg-backlit-shadow-bright: #e62d2d;
-// $bg-options-panel: linear-gradient(180deg, darken($secondary, 15) 5%, $secondary 25%, darken($secondary, 10) 100%);
 $bg-options-panel: darken($secondary, 15);
 $case-body-background: darken($secondary, 20);
 $case-shadow: 0 1.5rem 2rem 0rem #172635;

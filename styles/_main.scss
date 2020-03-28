@@ -12,7 +12,7 @@ $key-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
 }
 @function keyTopGradient($baseColor: $primary, $rounded: false) {
 	@if $rounded == false {
-		@return (linear-gradient(90deg, darken($baseColor, 4) 0%, $baseColor 20%, $baseColor 80%, darken($baseColor, 4)));
+		@return (linear-gradient(90deg, darken($baseColor, 6) 0%, $baseColor 30%, $baseColor 60%, darken($baseColor, 4)));
 	} @else {
 		@return (linear-gradient(180deg, lighten($baseColor, 2), $baseColor, darken($baseColor, 5)));
 	}
@@ -39,6 +39,7 @@ input {
 	margin-bottom: 1rem;
 	border: none;
 	background-color: transparent;
+	// width: 100%;
 	&::placeholder {
 		color: lighten($secondary, 40);
 	}
@@ -58,7 +59,8 @@ button {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 100vw;
+	// width: 100vw;
+	margin: 0 auto;
 	height: 100vh;
 	overflow: visible;
 }
@@ -247,7 +249,7 @@ button {
 		justify-content: center;
 		padding: 3rem 0;
 	}
-	&__backlight {
+	&__option {
 		margin-right: 2rem;
 	}
 	&__theme-selector {

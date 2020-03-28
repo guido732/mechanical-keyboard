@@ -62,7 +62,7 @@
 		document.querySelector(".background").classList.remove("hidden");
 		$loadscreen.classList.add("fade");
 		setTimeout(() => {
-			// $loadscreen.parentNode.removeChild($loadscreen);
+			$loadscreen.parentNode.removeChild($loadscreen);
 		}, 1000);
 	};
 

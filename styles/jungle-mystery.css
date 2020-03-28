@@ -53,7 +53,7 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100vw;
+  margin: 0 auto;
   height: 100vh;
   overflow: visible;
 }
@@ -211,15 +211,15 @@ button {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background: -webkit-gradient(linear, left top, right top, from(#eeece8), color-stop(20%, #f7f6f4), color-stop(80%, #f7f6f4), to(#eeece8));
-  background: linear-gradient(90deg, #eeece8 0%, #f7f6f4 20%, #f7f6f4 80%, #eeece8);
+  background: -webkit-gradient(linear, left top, right top, from(#ddd9cf), color-stop(30%, #eae7e1), color-stop(60%, #eae7e1), to(#e2ddd5));
+  background: linear-gradient(90deg, #ddd9cf 0%, #eae7e1 30%, #eae7e1 60%, #e2ddd5);
   border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
-  border-top: 0.15rem solid #e2ded6;
-  border-right: 0.35rem solid #e6e3dc;
-  border-left: 0.35rem solid #e6e3dc;
-  border-bottom: 0.6rem solid #d7d5d2;
-  -webkit-box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5), inset -1px -1px 5px 0 #f9f8f7;
-          box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5), inset -1px -1px 5px 0 #f9f8f7;
+  border-top: 0.15rem solid #d5cfc3;
+  border-right: 0.35rem solid #d9d4c9;
+  border-left: 0.35rem solid #d9d4c9;
+  border-bottom: 0.6rem solid #c9c6c0;
+  -webkit-box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5), inset -1px -1px 5px 0 #ece9e4;
+          box-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5), inset -1px -1px 5px 0 #ece9e4;
 }
 
 .key:last-child {
@@ -227,9 +227,9 @@ button {
 }
 
 .key--primary {
-  color: #f7f6f4;
-  background: -webkit-gradient(linear, left top, right top, from(#f66d3c), color-stop(20%, #f77c50), color-stop(80%, #f77c50), to(#f66d3c));
-  background: linear-gradient(90deg, #f66d3c 0%, #f77c50 20%, #f77c50 80%, #f66d3c);
+  color: #eae7e1;
+  background: -webkit-gradient(linear, left top, right top, from(#f66633), color-stop(30%, #f77c50), color-stop(60%, #f77c50), to(#f66d3c));
+  background: linear-gradient(90deg, #f66633 0%, #f77c50 30%, #f77c50 60%, #f66d3c);
   border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
   border-top: 0.15rem solid #f5571f;
   border-right: 0.35rem solid #f55f29;
@@ -240,9 +240,9 @@ button {
 }
 
 .key--secondary {
-  color: #f7f6f4;
-  background: -webkit-gradient(linear, left top, right top, from(#257c6b), color-stop(20%, #2a8c79), color-stop(80%, #2a8c79), to(#257c6b));
-  background: linear-gradient(90deg, #257c6b 0%, #2a8c79 20%, #2a8c79 80%, #257c6b);
+  color: #eae7e1;
+  background: -webkit-gradient(linear, left top, right top, from(#237465), color-stop(30%, #2a8c79), color-stop(60%, #2a8c79), to(#257c6b));
+  background: linear-gradient(90deg, #237465 0%, #2a8c79 30%, #2a8c79 60%, #257c6b);
   border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
   border-top: 0.15rem solid #1e6557;
   border-right: 0.35rem solid #216d5e;
@@ -349,7 +349,7 @@ button {
   padding: 3rem 0;
 }
 
-.options__backlight {
+.options__option {
   margin-right: 2rem;
 }
 

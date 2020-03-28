@@ -53,7 +53,7 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100vw;
+  margin: 0 auto;
   height: 100vh;
   overflow: visible;
 }
@@ -211,8 +211,8 @@ button {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background: -webkit-gradient(linear, left top, right top, from(#eeece8), color-stop(20%, #f7f6f4), color-stop(80%, #f7f6f4), to(#eeece8));
-  background: linear-gradient(90deg, #eeece8 0%, #f7f6f4 20%, #f7f6f4 80%, #eeece8);
+  background: -webkit-gradient(linear, left top, right top, from(#eae8e2), color-stop(30%, #f7f6f4), color-stop(60%, #f7f6f4), to(#eeece8));
+  background: linear-gradient(90deg, #eae8e2 0%, #f7f6f4 30%, #f7f6f4 60%, #eeece8);
   border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
   border-top: 0.15rem solid #e2ded6;
   border-right: 0.35rem solid #e6e3dc;
@@ -228,8 +228,8 @@ button {
 
 .key--primary {
   color: #f7f6f4;
-  background: -webkit-gradient(linear, left top, right top, from(#f4632e), color-stop(20%, #f57141), color-stop(80%, #f57141), to(#f4632e));
-  background: linear-gradient(90deg, #f4632e 0%, #f57141 20%, #f57141 80%, #f4632e);
+  background: -webkit-gradient(linear, left top, right top, from(#f35b24), color-stop(30%, #f57141), color-stop(60%, #f57141), to(#f4632e));
+  background: linear-gradient(90deg, #f35b24 0%, #f57141 30%, #f57141 60%, #f4632e);
   border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
   border-top: 0.15rem solid #f24d11;
   border-right: 0.35rem solid #f3541a;
@@ -241,8 +241,8 @@ button {
 
 .key--secondary {
   color: #f7f6f4;
-  background: -webkit-gradient(linear, left top, right top, from(#35a1e6), color-stop(20%, #47a9e8), color-stop(80%, #47a9e8), to(#35a1e6));
-  background: linear-gradient(90deg, #35a1e6 0%, #47a9e8 20%, #47a9e8 80%, #35a1e6);
+  background: -webkit-gradient(linear, left top, right top, from(#2c9ce5), color-stop(30%, #47a9e8), color-stop(60%, #47a9e8), to(#35a1e6));
+  background: linear-gradient(90deg, #2c9ce5 0%, #47a9e8 30%, #47a9e8 60%, #35a1e6);
   border-radius: 0.3125rem 0.3125rem 0.5rem 0.5rem;
   border-top: 0.15rem solid #1c93e0;
   border-right: 0.35rem solid #2398e3;
@@ -349,7 +349,7 @@ button {
   padding: 3rem 0;
 }
 
-.options__backlight {
+.options__option {
   margin-right: 2rem;
 }
 

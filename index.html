@@ -109,7 +109,7 @@
 					<div data-key="ArrowDown" class="key text-lg text-center key--primary">&#9661;</div>
 				</div>
 			</div>
-			<div class="keyboard__section keyboard__section--vertical">
+			<div id="numpad" class="keyboard__section keyboard__section--vertical">
 				<div class="keyboard__row keyboard__row--vertical">
 					<div data-key="Home" class="key key--vert key--secondary">HOME</div>
 					<div data-key="NumLock" class="key key--vert key--secondary">NUM<br />LK</div>
@@ -146,9 +146,13 @@
 			<button class="options__button">Show options</button>
 			<div class="options__panel">
 				<div class="options__wrapper">
-					<div class="options__backlight">
+					<div class="options__option">
 						<input type="checkbox" name="backlight" id="backlight" value="backlight" />
 						<label for="backlight">Backlight on/off</label>
+					</div>
+					<div class="options__option">
+						<input type="checkbox" name="length" id="length" value="length" />
+						<label for="length">Keyboard large/short version</label>
 					</div>
 					<select class="options__theme-selector" name="pallete" id="pallete">
 						<option value="jungle">Jungle Mystery</option>
