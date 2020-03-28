@@ -14,6 +14,7 @@
 	const $accordeonBtn = document.querySelector(".options__button");
 	const $panel = document.querySelector(".options__panel");
 	const activeTheme = getTheme();
+	const $loadscreen = document.querySelector(".loadscreen");
 	// Events
 	// Keypress animation
 	document.addEventListener("keydown", function(e) {
@@ -55,6 +56,12 @@
 	setTheme(activeTheme);
 	handleBackground(activeTheme);
 	handleBackgroundElements(activeTheme);
+	window.onload = () => {
+		$loadscreen.classList.add("fade");
+		setTimeout(() => {
+			$loadscreen.parentNode.removeChild($loadscreen);
+		}, 1000);
+	};
 
 	// Expansion panel
 	$accordeonBtn.addEventListener("click", togglePanelVisibility);

@@ -1,0 +1,25 @@
+.loadscreen {
+	font-family: "Baloo 2", sans-serif;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: red;
+	color: white;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(165deg, #1f967e 0%, #0f362e 100%);
+	opacity: 1;
+	transition: opacity 1s;
+}
+.loadscreen__text {
+	font-size: 4rem;
+}
+
+.loadscreen.fade {
+	opacity: 0;
+	z-index: -100;
+}
