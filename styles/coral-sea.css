@@ -91,7 +91,12 @@ button {
           flex-direction: row;
 }
 
-.keyboard__section__row {
+.keyboard__section--backlight-active {
+  -webkit-animation: backlight 3s ease infinite;
+          animation: backlight 3s ease infinite;
+}
+
+.keyboard__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -102,11 +107,11 @@ button {
   position: relative;
 }
 
-.keyboard__section__row:last-child {
+.keyboard__row:last-child {
   margin-bottom: 0;
 }
 
-.keyboard__section__row--vertical {
+.keyboard__row--vertical {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -114,13 +119,8 @@ button {
   margin-right: 0.25rem;
 }
 
-.keyboard__section__row--vertical:last-child {
+.keyboard__row--vertical:last-child {
   margin-right: 0;
-}
-
-.keyboard__section--backlight-active {
-  -webkit-animation: backlight 3s ease infinite;
-          animation: backlight 3s ease infinite;
 }
 
 .keyboard__corner {
@@ -263,7 +263,7 @@ button {
   margin-bottom: 0;
 }
 
-.key--vert--5 {
+.key--vert.key--5 {
   width: 4rem;
   height: 8.25rem;
 }
@@ -314,7 +314,7 @@ button {
   transition: max-height 0.2s ease-out;
 }
 
-.options__panel__wrapper {
+.options__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -327,11 +327,11 @@ button {
   padding: 3rem 0;
 }
 
-.options__panel__wrapper__backlight {
+.options__backlight {
   margin-right: 2rem;
 }
 
-.options__panel__wrapper__theme-selector {
+.options__theme-selector {
   padding: 0.5rem 1rem;
   width: 12rem;
   border: none;
@@ -367,25 +367,25 @@ button {
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
-.background__element--blob__svg path {
+.background__element--blob path {
   -webkit-filter: drop-shadow(2px 5px 5px #122430);
           filter: drop-shadow(2px 5px 5px #122430);
   filter: drop-shadow(2px 5px 5px #122430);
 }
 
-.background__element--blob__svg--1 {
+.background__element--blob#blob1 {
   left: 0rem;
   top: 0rem;
   fill: #f0a598;
 }
 
-.background__element--blob__svg--2 {
+.background__element--blob#blob2 {
   right: 0rem;
   top: -5rem;
   fill: #ed9282;
 }
 
-.background__element--blob__svg--3 {
+.background__element--blob#blob3 {
   right: 15rem;
   bottom: -5rem;
   fill: #e76b55;

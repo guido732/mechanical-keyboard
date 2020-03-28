@@ -93,24 +93,25 @@ button {
 		&--vertical {
 			flex-direction: row;
 		}
-		&__row {
-			display: flex;
-			width: min-content;
-			margin-bottom: $key-gap;
-			position: relative;
-			&:last-child {
-				margin-bottom: 0;
-			}
-			&--vertical {
-				flex-direction: column;
-				margin-right: $key-gap;
-				&:last-child {
-					margin-right: 0;
-				}
-			}
-		}
+
 		&--backlight-active {
 			animation: backlight 3s ease infinite;
+		}
+	}
+	&__row {
+		display: flex;
+		width: min-content;
+		margin-bottom: $key-gap;
+		position: relative;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&--vertical {
+			flex-direction: column;
+			margin-right: $key-gap;
+			&:last-child {
+				margin-right: 0;
+			}
 		}
 	}
 	&__corner {
@@ -194,7 +195,7 @@ button {
 		&:last-child {
 			margin-bottom: 0;
 		}
-		&--5 {
+		&.key--5 {
 			width: $key-base-size;
 			height: calcDim((2));
 		}
@@ -231,20 +232,20 @@ button {
 		background: $bg-options-panel;
 		box-shadow: 0 15px 15px 0 rgba(104, 143, 168, 0.05);
 		transition: max-height 0.2s ease-out;
-		&__wrapper {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding: 3rem 0;
-			&__backlight {
-				margin-right: 2rem;
-			}
-			&__theme-selector {
-				padding: 0.5rem 1rem;
-				width: 12rem;
-				border: none;
-			}
-		}
+	}
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 3rem 0;
+	}
+	&__backlight {
+		margin-right: 2rem;
+	}
+	&__theme-selector {
+		padding: 0.5rem 1rem;
+		width: 12rem;
+		border: none;
 	}
 }
 .background {
@@ -270,31 +271,27 @@ button {
 			transition: transform 0.3s ease;
 		}
 		&--blob {
-			&__svg {
-				// fill: lighten($primary, 5);
-				path {
-					filter: drop-shadow(2px 5px 5px darken($secondary, 20));
-					filter: drop-shadow(2px 5px 5px darken($secondary, 20));
-				}
-				&--1 {
-					left: 0rem;
-					top: 0rem;
-					fill: lighten($primary, 5);
-				}
-				&--2 {
-					right: 0rem;
-					top: -5rem;
-					fill: $primary;
-				}
-				&--3 {
-					right: 15rem;
-					bottom: -5rem;
-					fill: darken($primary, 10);
-				}
+			path {
+				filter: drop-shadow(2px 5px 5px darken($secondary, 20));
+				filter: drop-shadow(2px 5px 5px darken($secondary, 20));
+			}
+			&#blob1 {
+				left: 0rem;
+				top: 0rem;
+				fill: lighten($primary, 5);
+			}
+			&#blob2 {
+				right: 0rem;
+				top: -5rem;
+				fill: $primary;
+			}
+			&#blob3 {
+				right: 15rem;
+				bottom: -5rem;
+				fill: darken($primary, 10);
 			}
 		}
 		&--leaves {
-			// width: 100%;
 			max-height: 100%;
 			max-width: 100%;
 			margin: 2rem;
@@ -314,6 +311,7 @@ button {
 			box-shadow: 5px 15px 10px 0 darken($secondary, 35);
 		}
 	}
+
 	&__container {
 		&--jungle,
 		&--sky {
