@@ -5,10 +5,15 @@
           box-sizing: border-box;
 }
 
-h1 {
+input {
   color: #a0e2d5;
   font-size: 6rem;
-  margin-bottom: -1rem;
+  margin-bottom: 1rem;
+  border: none;
+  background-color: transparent;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
 
 button {
@@ -462,6 +467,18 @@ button {
 
 .hidden {
   display: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  /* added line */
 }
 
 @-webkit-keyframes backlight {

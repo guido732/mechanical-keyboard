@@ -33,10 +33,13 @@ $key-shadow: 0.25rem 0.25rem 1rem 0rem rgba(23, 38, 53, 0.5);
 	margin: 0;
 	box-sizing: border-box;
 }
-h1 {
+input {
 	color: lighten($secondary, 40);
 	font-size: 6rem;
-	margin-bottom: -1rem;
+	margin-bottom: 1rem;
+	border: none;
+	background-color: transparent;
+	width: min-content;
 }
 button {
 	font-family: "Baloo 2", cursive;
@@ -346,6 +349,15 @@ button {
 }
 .hidden {
 	display: none;
+}
+.visually-hidden {
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap; /* added line */
 }
 
 // Animations
